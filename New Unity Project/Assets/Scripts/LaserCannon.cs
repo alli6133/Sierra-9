@@ -20,7 +20,7 @@ public class LaserCannon : MonoBehaviour
             Touch touch = Input.GetTouch(0);//ändra siffran vid problem
             if (touch.phase == TouchPhase.Began)
             {
-                if (touch.position.y == 0f)
+                if (Input.GetKeyDown(KeyCode(Q)) == true)
                 {
                     Rigidbody2D clone;
                     clone = Instantiate(missile, transform.position, transform.rotation);
