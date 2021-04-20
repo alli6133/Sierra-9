@@ -12,8 +12,7 @@ public class CameraFollow : MonoBehaviour
     public float smoothSpeed = 0.1f;
     void Start()
     {
-        followTarget = GameObject.Find("PlayerTest");//leta upp player och gör det till followTargets värde
-        
+        followTarget = GameObject.Find("PlayerTest"); //leta upp player och gör det till followTargets värde
     }
 
 

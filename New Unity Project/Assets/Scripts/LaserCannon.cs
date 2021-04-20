@@ -17,10 +17,10 @@ public class LaserCannon : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            Touch touch = Input.GetTouch(0);//ändra siffran vid problem
+            Touch touch = Input.GetTouch(0);//ï¿½ndra siffran vid problem
             if (touch.phase == TouchPhase.Began)
             {
-                if (Input.GetKeyDown(KeyCode(Q)) == true)
+                if (Input.GetKeyDown(KeyCode.Q) == true)
                 {
                     Rigidbody2D clone;
                     clone = Instantiate(missile, transform.position, transform.rotation);
@@ -32,7 +32,7 @@ public class LaserCannon : MonoBehaviour
     }
 
     /*Ett laserskott skjuts samtidigt som Q trycks ner. 
-     * måste minska eldhastigheten
+     * mï¿½ste minska eldhastigheten
      * 
      * */
 }
