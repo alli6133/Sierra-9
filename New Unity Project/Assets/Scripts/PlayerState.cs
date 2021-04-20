@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerState : MonoBehaviour
 {
-    public int healthPoints = 10;//aktuell HP
+    public int healthPoints;//aktuell HP
     public int initialHP = 10;//HP spelaren börjar med
 
     void Start()

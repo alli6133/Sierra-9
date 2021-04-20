@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class TouchMovement : MonoBehaviour
 {
-
+    float width = (float)Screen.width / 2f;
+    float height = (float)Screen.height / 2f;
     Vector3 myPosition;
     private Rigidbody2D rigidBody2D;
     public float movementSpeed = 5f;
-    private float moveDirection = 0f;
-    public float verticalForce = 4;
     public float screenHeight;
-
-    //private float vertical = 0;
-    
 
     void Start()
     {
@@ -34,37 +30,44 @@ public class TouchMovement : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-            Debug.Log(touch.deltaPosition.magnitude);
-            if (touch.phase == TouchPhase.Stationary && touch.deltaPosition.magnitude < 8000f)
+            bool top = false;
+            bool right = false;
+            if (touch.phase == TouchPhase.Stationary && touch.deltaPosition.magnitude < 10f)
             {
                 if (touch.position.y > screenHeight / 2)
                 {
                     calculatedMovement = new Vector3(1f, 1f);
+                    top = true;
                     //vertical = 1.0f;
-
                 }
                 if (touch.position.y < screenHeight / 2)
                 {
                     calculatedMovement = new Vector3(1f, -1f);
                     //vertical = -1.0f;
                 }
+
+                if (touch.position.x > Screen.width / 2f)
+                {
+                    right = true;
+                }
             }
             else
             {
-                calculatedMovement = new Vector3(0f, 0f);
+                calculatedMovement = new Vector3(1f, 0f);
             }
         }
         calculatedMovement *= Time.deltaTime * movementSpeed;
         Move(calculatedMovement);
     }
 
-    /*private void FixedUpdate()
-    {
-        rigidBody2D.AddForce(new Vector2(horizontal *(movementSpeed * 20f) * Time.deltaTime, 0));
-    }*/
-
     private void Move(Vector3 speed)
     {
         gameObject.transform.Translate(speed);
     }
 }
+
+/*
+ *      ATT GÖRA
+ *finjustera touch-magnitud
+ *sätt kontrollerna till övre och nedersta vänstra hörnet
+*/
