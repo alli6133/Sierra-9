@@ -8,21 +8,23 @@ public class EnemyBehaviour : MonoBehaviour
     private Rigidbody2D rigidBody2D;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private float frequency = 5f; 
-    [SerializeField] private float magnitude = 5f; 
-    [SerializeField] private float offset = 0f; 
+    [SerializeField] private float radius = 5f; 
+    [SerializeField] private float speed = 4f; 
+
+    //[SerializeField] private float offset = 0f; 
 
     void Start()
     {
         rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         myPosition = gameObject.transform.position;
-        //rigidBody2D.gravityScale = 0;
     }
 
 
     void Update()
     {
-        transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency + offset) * magnitude;
+        //Använder sinusformeln för att röra fienden upp och ner
+        transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency /*+ offset*/) * radius + transform.right * Time.time * speed;
     }
 
 }

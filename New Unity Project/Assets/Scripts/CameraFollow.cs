@@ -8,8 +8,8 @@ public class CameraFollow : MonoBehaviour
 {
     GameObject followTarget;
 
-    private Vector3 offset = new Vector3(0f, 0f, -10);
-    public float smoothSpeed = 0.1f;
+    private Vector3 offset = new Vector3(10f, 0f, -10);
+    public float smoothSpeed = 0.5f;
     void Start()
     {
         followTarget = GameObject.Find("PlayerTest"); //leta upp player och gör det till followTargets värde
