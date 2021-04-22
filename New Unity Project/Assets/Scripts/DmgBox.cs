@@ -5,16 +5,19 @@ using UnityEngine;
 public class DmgBox : MonoBehaviour
 {
     GameObject enemyToKill;
+    public GameObject missile;
     
     void Start()
     {
         enemyToKill = gameObject.transform.parent.gameObject;
+      
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Missile") == true)
         {
+            Destroy(missile);
             Destroy(enemyToKill);
         }
     }
@@ -22,6 +25,6 @@ public class DmgBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        missile = GameObject.Find("Missile(Clone)");
     }
 }

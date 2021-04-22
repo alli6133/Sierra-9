@@ -30,6 +30,7 @@ public class LaserCannon : MonoBehaviour
         clone.velocity = new Vector2(13.0f, 0.0f);
     }
 
+
     /*Ett laserskott skjuts samtidigt som en UI-button trycks. 
      * Tidigare så sköt spelaren genom att trycka på nedre vänstra hörnet
      * med Input.touch.
