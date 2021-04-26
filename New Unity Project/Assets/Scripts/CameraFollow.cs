@@ -10,7 +10,7 @@ public class CameraFollow : MonoBehaviour
     GameObject followTarget;
 
     private Vector3 offset = new Vector3(12f, 0f, -10);
-    public float smoothSpeed = 0.5f;
+    public float smoothSpeed = 0.1f;
     void Start()
     {
         followTarget = GameObject.Find("Player"); //leta upp player och gör det till followTargets värde
