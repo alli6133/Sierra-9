@@ -7,9 +7,11 @@ public class LaserCannon : MonoBehaviour
 {
     public Rigidbody2D missile;
     public Button button;
-    public GameObject player;
-    public Vector3 playerPos;
+    public GameObject laserLauncher;
+    public Vector3 launcherPos;
     public Rigidbody2D clone;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip firesound;
 
     // Start is called before the first frame update
     void Start()
@@ -20,14 +22,16 @@ public class LaserCannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        player = GameObject.Find("Player");
-        playerPos = player.transform.position;
+        laserLauncher = GameObject.Find("laserLauncher");
+        launcherPos = laserLauncher.transform.position;
     }
 
     public void FireMissile()
     {
-        clone = Instantiate(missile, playerPos, transform.rotation);
+        clone = Instantiate(missile,launcherPos,transform.rotation);
         clone.velocity = new Vector2(13.0f, 0.0f);
+        audioSource.PlayOneShot(firesound);
+
        
     }
     

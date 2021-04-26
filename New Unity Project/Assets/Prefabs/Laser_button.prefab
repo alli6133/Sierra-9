@@ -120,7 +120,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5573201022021565629}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LaserCannon, Assembly-CSharp
         m_MethodName: FireMissile
         m_Mode: 1
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 3620182211556170821}
   - component: {fileID: 966483406908382755}
   - component: {fileID: 8013479628921306260}
-  - component: {fileID: 5573201022021565629}
+  - component: {fileID: 4271631891616975786}
   m_Layer: 5
   m_Name: Laser_button
   m_TagString: Untagged
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5573201022021565629
+--- !u!114 &4271631891616975786
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,8 +242,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2994558211793999406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e35fd96a287292f44b08ba221292cec0, type: 3}
+  m_Script: {fileID: 11500000, guid: 71d67e9fa11f968418e10e2b8d532f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missile: {fileID: 3969091788881210603, guid: c46ca9cec88cd1d44aeee1067baa69c0, type: 3}
+  missile: {fileID: 3969091788881210603, guid: bcccc1dc7464ff64a8743e57714dd3d9, type: 3}
   button: {fileID: 8426119968459501739}
+  player: {fileID: 0}
+  playerPos: {x: 0, y: 0, z: 0}
+  clone: {fileID: 0}
