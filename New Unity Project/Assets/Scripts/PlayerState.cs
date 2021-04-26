@@ -30,7 +30,6 @@ public class PlayerState : MonoBehaviour
 
     public void ResetScene()
     {
-        //gå till game-over screen
-        SceneManager.LoadScene("New Scene");
+        SceneManager.LoadScene("Level1");
     }
 }
