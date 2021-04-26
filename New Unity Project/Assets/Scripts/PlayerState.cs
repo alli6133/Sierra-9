@@ -19,9 +19,9 @@ public class PlayerState : MonoBehaviour
         
     }
 
-    public void DoHarm(int doHarmByThisMuch)
+    public void DoHarm(int dmg)
     {
-        healthPoints -= doHarmByThisMuch;
+        healthPoints -= dmg;
         if (healthPoints <= 0)
         {
             ResetScene();

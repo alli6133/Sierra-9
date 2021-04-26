@@ -28,7 +28,7 @@ public class LaserCannon : MonoBehaviour
 
     public void FireMissile()
     {
-        clone = Instantiate(missile,launcherPos,transform.rotation);
+        clone = Instantiate(missile,launcherPos,missile.transform.rotation);
         clone.velocity = new Vector2(13.0f, 0.0f);
         audioSource.PlayOneShot(firesound);
 
