@@ -35,6 +35,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         //Använder sinusformeln för att röra fienden upp och ner
         transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency /*+ offset*/) * radius + transform.right * Time.time * speed;
+        //anropa EnemyLaser
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

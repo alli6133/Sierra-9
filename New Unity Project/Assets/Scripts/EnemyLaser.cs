@@ -1,14 +1,12 @@
-﻿//Axel Sterner
+//Axel Sterner
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
 
-public class LaserCannon : MonoBehaviour
+public class EnemyLaser : MonoBehaviour
 {
     public Rigidbody2D missile;
-    public Button button;
-    public GameObject laserLauncher;
+    public GameObject enemyLauncher;
     public Vector3 launcherPos;
     public Rigidbody2D clone;
     [SerializeField] private AudioSource audioSource;
@@ -23,16 +21,15 @@ public class LaserCannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        laserLauncher = GameObject.Find("laserLauncher");
-        launcherPos = laserLauncher.transform.position;
+        enemyLauncher = GameObject.Find("enemyLauncher");
+        launcherPos = enemyLauncher.transform.position;
+        FireMissile();
     }
 
     public void FireMissile()
     {
-        clone = Instantiate(missile,launcherPos,missile.transform.rotation);
+        clone = Instantiate(missile, launcherPos, missile.transform.rotation);
         clone.velocity = new Vector2(13.0f, 0.0f);
         audioSource.PlayOneShot(firesound);
-
-       
     }
 }
