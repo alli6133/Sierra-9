@@ -36,13 +36,13 @@ public class TouchMovement : MonoBehaviour
             {
                 if (touch.position.y > screenHeight / 2)
                 {
-                    calculatedMovement = new Vector3(1f, 1f);
+                    calculatedMovement = new Vector3(1f, 3f);
                     top = true;
                     //vertical = 1.0f;
                 }
                 if (touch.position.y < screenHeight / 2)
                 {
-                    calculatedMovement = new Vector3(1f, -1f);
+                    calculatedMovement = new Vector3(1f, -3f);
                     //vertical = -1.0f;
                 }
 
