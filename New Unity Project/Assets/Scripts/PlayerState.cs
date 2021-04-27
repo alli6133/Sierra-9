@@ -116,7 +116,7 @@ public class PlayerState : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            ResetScene();
+            GameOver();
         }
     }
 
@@ -148,8 +148,8 @@ public class PlayerState : MonoBehaviour
         speedUpBool = true;
     }
 
-    public void ResetScene()
+    public void GameOver()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("GameOver");
     }
 }

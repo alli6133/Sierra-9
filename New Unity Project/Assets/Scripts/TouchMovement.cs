@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class TouchMovement : MonoBehaviour
 {
-    float width = (float)Screen.width / 2f;
-    float height = (float)Screen.height / 2f;
     Vector3 myPosition;
     private Rigidbody2D rigidBody2D;
     public float movementSpeed = 5f;
