@@ -9,27 +9,38 @@ public class EnemyLaser : MonoBehaviour
     public GameObject enemyLauncher;
     public Vector3 launcherPos;
     public Rigidbody2D clone;
+
+    [SerializeField] private float laserTimer;
+    [SerializeField] private float laserCooldown = 0.7f;
+
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip firesound;
 
-    // Start is called before the first frame update
     void Start()
     {
-
+        laserTimer = laserCooldown;
     }
 
-    // Update is called once per frame
     void Update()
     {
         enemyLauncher = GameObject.Find("enemyLauncher");
         launcherPos = enemyLauncher.transform.position;
-        FireMissile();
+
+        if (laserTimer < 0)
+        {
+            FireMissile();
+        }
+        else
+        {
+            laserTimer -= Time.deltaTime;
+        }
     }
 
     public void FireMissile()
     {
-        clone = Instantiate(missile, missile.transform.position, missile.transform.rotation);
+        clone = Instantiate(missile, launcherPos, missile.transform.rotation);
         clone.velocity = new Vector2(-13.0f, 0.0f);
         audioSource.PlayOneShot(firesound);
+        laserTimer = laserCooldown;
     }
 }

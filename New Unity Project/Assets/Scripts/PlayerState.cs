@@ -89,7 +89,7 @@ public class PlayerState : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") == true)
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Missile"))
         {
             TakeDamage(enemy.attackDamage);
             Destroy(collision.gameObject);
