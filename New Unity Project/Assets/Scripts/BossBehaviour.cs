@@ -20,7 +20,6 @@ public class BossBehaviour : MonoBehaviour
         myPosition = gameObject.transform.position;
     }
 
-
     void Update()
     {
         transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency /*+ offset*/) * radius + transform.right * Time.time * speed;

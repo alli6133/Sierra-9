@@ -14,13 +14,13 @@ public class LaserCannon : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip firesound;
 
-    private float laserCooldown = 0.5f;
+    private float laserCooldown = 0.3f;
     private float laserTimer;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        laserTimer = laserCooldown;
     }
 
     // Update is called once per frame
@@ -28,12 +28,18 @@ public class LaserCannon : MonoBehaviour
     {
         laserLauncher = GameObject.Find("laserLauncher");
         launcherPos = laserLauncher.transform.position;
+        laserTimer -= Time.deltaTime;
+
     }
 
     public void FireMissile()
     {
-        clone = Instantiate(missile, launcherPos, missile.transform.rotation);
-        clone.velocity = new Vector2(13.0f, 0.0f);
-        audioSource.PlayOneShot(firesound);
+        if (laserTimer < 0)
+        {
+            clone = Instantiate(missile, launcherPos, missile.transform.rotation);
+            clone.velocity = new Vector2(13.0f, 0.0f);
+            audioSource.PlayOneShot(firesound);
+            laserTimer = laserCooldown;
+        }
     }
 }
