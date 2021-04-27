@@ -14,6 +14,9 @@ public class LaserCannon : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip firesound;
 
+    private float laserCooldown = 0.5f;
+    private float laserTimer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,10 +32,8 @@ public class LaserCannon : MonoBehaviour
 
     public void FireMissile()
     {
-        clone = Instantiate(missile,launcherPos,missile.transform.rotation);
+        clone = Instantiate(missile, launcherPos, missile.transform.rotation);
         clone.velocity = new Vector2(13.0f, 0.0f);
         audioSource.PlayOneShot(firesound);
-
-       
     }
 }
