@@ -8,7 +8,8 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject player;
     public GameObject enemy;
-    public GameObject enemyClone;
+    private GameObject enemyClone;
+    public Transform spawnPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,8 @@ public class EnemySpawner : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //enemyClone = Instantiate(enemy,)
+            enemyClone = Instantiate(enemy, spawnPosition);
+            print("Collider triggered");
         }
     }
 
