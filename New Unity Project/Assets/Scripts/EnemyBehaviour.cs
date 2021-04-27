@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    public PlayerState ps;
+    private PlayerState ps;
     private Vector3 myPosition;
     //private Rigidbody2D rigidBody2D; 
     //private SpriteRenderer spriteRenderer;
@@ -24,6 +24,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Start()
     {
+        ps = GameObject.Find("Player").GetComponent<PlayerState>();
         currentHealth = maxHealth;
         //rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
         //spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
