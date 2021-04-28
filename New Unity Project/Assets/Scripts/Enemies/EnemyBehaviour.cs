@@ -16,9 +16,9 @@ public class EnemyBehaviour : MonoBehaviour
     public int attackDamage = 1;
     public double currentHealth;
     
-    [SerializeField] private float frequency = 5f; 
-    [SerializeField] private float radius = 5f; 
-    [SerializeField] private float speed = 4f; 
+    [SerializeField] private float frequency = 5f;
+    [SerializeField] private float radius = 5f;
+    [SerializeField] private float speed = 4f;
 
     //[SerializeField] private float offset = 0f; 
 
