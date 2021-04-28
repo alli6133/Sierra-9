@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class DmgBoxBoss : MonoBehaviour
@@ -29,6 +30,7 @@ public class DmgBoxBoss : MonoBehaviour
         if (HP == 0)
         {
             destroyBoss();
+            SceneManager.LoadScene("MainMenu");
         }
 
         missile = GameObject.Find("Missile(Clone)");

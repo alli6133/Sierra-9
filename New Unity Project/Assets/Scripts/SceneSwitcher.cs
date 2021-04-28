@@ -22,7 +22,7 @@ public class SceneSwitcher : MonoBehaviour
     {
         if (collision.CompareTag("Player") == true)
         {
-            SceneManager.LoadScene("Main");
+            SceneManager.LoadScene("Level2");
         }
     }
 }
