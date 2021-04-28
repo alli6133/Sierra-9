@@ -22,7 +22,15 @@ public class SceneSwitcher : MonoBehaviour
     {
         if (collision.CompareTag("Player") == true)
         {
-            SceneManager.LoadScene("Level2");
+            if(SceneManager.GetActiveScene().name == "Level1")
+            {
+                SceneManager.LoadScene("Level2");
+            }
+            else
+            {
+                SceneManager.LoadScene("GameOver");
+            }
+            
         }
     }
 }
