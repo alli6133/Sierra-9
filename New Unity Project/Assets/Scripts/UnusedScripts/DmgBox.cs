@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class DmgBox : MonoBehaviour
 {
-    GameObject enemyToKill;
-    public GameObject missile;
+    private GameObject enemyToKill;
+    private GameObject missile;
     
     void Start()
     {

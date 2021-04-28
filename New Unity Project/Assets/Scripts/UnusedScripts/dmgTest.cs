@@ -10,7 +10,7 @@ public class dmgTest : MonoBehaviour
 
         if(collision.gameObject.CompareTag("Player") == true){
 
-            collision.gameObject.GetComponent<PlayerState>().DoHarm(dmg);
+            collision.gameObject.GetComponent<PlayerState>().TakeDamage(dmg);
         }
     }
 }

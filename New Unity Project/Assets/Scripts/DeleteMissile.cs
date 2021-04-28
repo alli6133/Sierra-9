@@ -1,11 +1,12 @@
-//Axel Sterner
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class SceneSwitcher : MonoBehaviour
+public class DeleteMissile : MonoBehaviour
 {
+
+    private GameObject missile;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,14 +16,14 @@ public class SceneSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        missile = GameObject.Find("Missile(Clone)");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") == true)
+        if (collision.CompareTag("Missile") == true)
         {
-            SceneManager.LoadScene("Main");
+            Destroy(missile);
         }
     }
 }

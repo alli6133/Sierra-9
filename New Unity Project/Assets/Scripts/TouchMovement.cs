@@ -1,4 +1,5 @@
 //Axel Sterner
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class TouchMovement : MonoBehaviour
     Vector3 myPosition;
     private Rigidbody2D rigidBody2D;
     public float movementSpeed = 5f;
-    public float screenHeight;
+    
 
     void Start()
     {
@@ -18,8 +19,6 @@ public class TouchMovement : MonoBehaviour
         myPosition = gameObject.transform.position;
         rigidBody2D.gravityScale = 0;
 
-        screenHeight = Screen.height;
-        
     }
 
     void Update()
@@ -35,22 +34,23 @@ public class TouchMovement : MonoBehaviour
             bool right = false;
             if (touch.phase == TouchPhase.Stationary && touch.deltaPosition.magnitude < 10f)
             {
-                if (touch.position.y > screenHeight / 2)
+                if (touch.position.y > height / 2)
                 {
-                    calculatedMovement = new Vector3(1f, 1f);
                     top = true;
-                    //vertical = 1.0f;
                 }
-                if (touch.position.y < screenHeight / 2)
-                {
-                    calculatedMovement = new Vector3(1f, -1f);
-                    //vertical = -1.0f;
-                }
-
-                if (touch.position.x > Screen.width / 2f)
+                if (touch.position.x > width / 2)
                 {
                     right = true;
                 }
+                else if (top && !right)
+                {
+                    calculatedMovement = new Vector3(1f, 3f);
+                }
+                else if (!top && !right)
+                {
+                    calculatedMovement = new Vector3(1f, -3f);
+                }
+
             }
             else
             {
