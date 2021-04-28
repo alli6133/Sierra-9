@@ -6,10 +6,12 @@ using UnityEngine;
 
 public class TouchMovement : MonoBehaviour
 {
+    float width = (float)Screen.width / 2f;
+    float height = (float)Screen.height / 2f;
     Vector3 myPosition;
     private Rigidbody2D rigidBody2D;
     public float movementSpeed = 5f;
-    public float screenHeight;
+    
 
     void Start()
     {
@@ -17,8 +19,6 @@ public class TouchMovement : MonoBehaviour
         myPosition = gameObject.transform.position;
         rigidBody2D.gravityScale = 0;
 
-        screenHeight = Screen.height;
-        
     }
 
     void Update()
@@ -34,16 +34,21 @@ public class TouchMovement : MonoBehaviour
             bool right = false;
             if (touch.phase == TouchPhase.Stationary && touch.deltaPosition.magnitude < 10f)
             {
-                if (touch.position.y > screenHeight / 2)
+                if (touch.position.y > height / 2)
+                {
+                    top = true;
+                }
+                if (touch.position.x > width / 2)
+                {
+                    right = true;
+                }
+                else if (top && !right)
                 {
                     calculatedMovement = new Vector3(1f, 3f);
-                    top = true;
-                    //vertical = 1.0f;
                 }
-                if (touch.position.y < screenHeight / 2)
+                else if (!top && !right)
                 {
                     calculatedMovement = new Vector3(1f, -3f);
-                    //vertical = -1.0f;
                 }
 
             }
