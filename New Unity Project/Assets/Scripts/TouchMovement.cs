@@ -46,10 +46,6 @@ public class TouchMovement : MonoBehaviour
                     //vertical = -1.0f;
                 }
 
-                if (touch.position.x > Screen.width / 2f)
-                {
-                    right = true;
-                }
             }
             else
             {
