@@ -101,7 +101,6 @@ GameObject:
   - component: {fileID: 6205926900011845824}
   - component: {fileID: 6205926900011845825}
   - component: {fileID: 6205926900011845826}
-  - component: {fileID: 6205926900011845827}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -242,7 +241,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  screenHeight: 0
 --- !u!114 &6205926900011845826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,30 +260,3 @@ MonoBehaviour:
   clone: {fileID: 0}
   audioSource: {fileID: 0}
   firesound: {fileID: 0}
---- !u!114 &6205926900011845827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6205926900011845854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95c37dc3ae4317d47b4b86b218695c6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  healthUI: {fileID: 0}
-  maxHealth: 10
-  currentHealth: 0
-  currentShieldHealth: 0
-  invincibilityTimer: 0
-  oneShotTimer: 0
-  speedUpTimer: 0
-  normalAttackDamage: 1
-  currentAttackDamage: 0
-  oneShotDamage: Infinity
-  invincibilityBool: 0
-  oneShotBool: 0
-  shieldBool: 0
-  speedUpBool: 0
