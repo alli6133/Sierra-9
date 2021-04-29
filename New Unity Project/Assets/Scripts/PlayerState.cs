@@ -10,6 +10,8 @@ public class PlayerState : MonoBehaviour
     public EnemyBehaviour enemy;
     public HealthUI healthUI;
 
+    public GameObject startPosition;
+
     public int maxHealth = 1;
     public int currentHealth;
     public int currentShieldHealth;
@@ -40,6 +42,8 @@ public class PlayerState : MonoBehaviour
         touch = GetComponent<TouchMovement>();
         normalMovementSpeed = GetComponent<TouchMovement>().movementSpeed;
         healthUI.SetMaxHealth(maxHealth);
+
+        gameObject.transform.position = startPosition.transform.position;
 
         currentHealth = maxHealth;
         currentAttackDamage = normalAttackDamage;
