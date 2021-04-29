@@ -209,22 +209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c37dc3ae4317d47b4b86b218695c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 2092000159, guid: 0e14208c019c6e84e8ef475c4d45ecda, type: 3}
-  healthUI: {fileID: 1010323809}
   startPosition: {fileID: 1987414949}
   maxHealth: 10
-  currentHealth: 0
-  currentShieldHealth: 0
-  invincibilityTimer: 0
-  oneShotTimer: 0
-  speedUpTimer: 0
-  normalAttackDamage: 1
-  currentAttackDamage: 0
-  oneShotDamage: Infinity
-  invincibilityBool: 0
-  oneShotBool: 0
-  shieldBool: 0
-  speedUpBool: 0
 --- !u!1 &133856388
 GameObject:
   m_ObjectHideFlags: 0
