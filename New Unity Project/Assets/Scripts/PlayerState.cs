@@ -7,27 +7,25 @@ using UnityEngine;
 
 public class PlayerState : MonoBehaviour
 {
-    public EnemyBehaviour enemy;
-    public HealthUI healthUI;
-
+    private HealthUI healthUI;
     public GameObject startPosition;
 
     public int maxHealth = 1;
-    public int currentHealth;
-    public int currentShieldHealth;
+    private int currentHealth;
+    private int currentShieldHealth;
+    [System.NonSerialized] public double currentAttackDamage;
 
-    public float invincibilityTimer;
-    public float oneShotTimer;
-    public float speedUpTimer;
+    private float invincibilityTimer;
+    private float oneShotTimer;
+    private float speedUpTimer;
 
-    public double normalAttackDamage = 1f;
-    public double currentAttackDamage;
-    public double oneShotDamage = double.PositiveInfinity;
+    private double normalAttackDamage = 1f;
+    private double oneShotDamage = double.PositiveInfinity;
 
-    public bool invincibilityBool;
-    public bool oneShotBool;
-    public bool shieldBool;
-    public bool speedUpBool;
+    private bool invincibilityBool;
+    private bool oneShotBool;
+    private bool shieldBool;
+    private bool speedUpBool;
 
     private TouchMovement touch;
 
@@ -41,6 +39,8 @@ public class PlayerState : MonoBehaviour
     {
         touch = GetComponent<TouchMovement>();
         normalMovementSpeed = GetComponent<TouchMovement>().movementSpeed;
+
+        healthUI = GameObject.Find("Slider").GetComponent<HealthUI>();
         healthUI.SetMaxHealth(maxHealth);
 
         gameObject.transform.position = startPosition.transform.position;
@@ -95,7 +95,7 @@ public class PlayerState : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemyMissile"))
         {
-            TakeDamage(enemy.attackDamage);
+            TakeDamage(collision.gameObject.GetComponent<EnemyBehaviour>().attackDamage);
             Destroy(collision.gameObject);
         }
     }
