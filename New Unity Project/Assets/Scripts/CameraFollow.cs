@@ -7,13 +7,15 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    public TouchMovement tm;
     private Vector3 myPosition;
-    [SerializeField] private float speed = 5f; 
+    [SerializeField] private float speed; 
 
     private Vector3 offset = new Vector3(12f, 0f, -10);
     void Start()
     {
         myPosition = gameObject.transform.position;
+        speed = tm.movementSpeed;
     }
 
 
