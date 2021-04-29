@@ -190,6 +190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: startPosition
+      value: 
+      objectReference: {fileID: 1987414949}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
 --- !u!1 &86446043 stripped
@@ -197,20 +201,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6205926900011845854, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
   m_PrefabInstance: {fileID: 86446042}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &86446044
+--- !u!114 &86446044 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6205926900011845825, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+  m_PrefabInstance: {fileID: 86446042}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86446043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95c37dc3ae4317d47b4b86b218695c6d, type: 3}
+  m_Script: {fileID: 11500000, guid: db69af8e228cf0643ba095230623b488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPosition: {fileID: 1987414949}
-  maxHealth: 10
 --- !u!1 &133856388
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d84765e713be134aa93a65144a5f4d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tm: {fileID: 0}
+  tm: {fileID: 86446044}
   speed: 5
 --- !u!1 &258138472
 GameObject:
