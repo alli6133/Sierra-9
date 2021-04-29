@@ -22,6 +22,7 @@ public class PlayerState : MonoBehaviour
     private float speedUpTimer;
 
     private double normalAttackDamage = 1f;
+    private int enemyAttackDamage;
     private double oneShotDamage = double.PositiveInfinity;
 
     private bool invincibilityBool;
@@ -60,6 +61,11 @@ public class PlayerState : MonoBehaviour
     void Update()
     {
         enemy = (EnemyBehaviour)FindObjectOfType(typeof(EnemyBehaviour));
+        
+        if(enemy != null)
+        {
+            enemyAttackDamage = enemy.attackDamage;
+        }
 
         if (invincibilityBool)
         {
@@ -101,7 +107,7 @@ public class PlayerState : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemyMissile"))
         {
-            TakeDamage(enemy.attackDamage);
+            TakeDamage(enemyAttackDamage);
             Destroy(collision.gameObject);
         }
 
