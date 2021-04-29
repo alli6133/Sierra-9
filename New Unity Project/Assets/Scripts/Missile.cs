@@ -10,5 +10,9 @@ public class Missile : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("EnemyMissile"))
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

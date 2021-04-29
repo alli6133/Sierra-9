@@ -330,7 +330,7 @@ MonoBehaviour:
   enemy: {fileID: 2092000159, guid: 0e14208c019c6e84e8ef475c4d45ecda, type: 3}
   healthUI: {fileID: 771610181}
   startPosition: {fileID: 1822699313}
-  maxHealth: 1
+  maxHealth: 10
   currentHealth: 0
   currentShieldHealth: 0
   invincibilityTimer: 0
@@ -1115,6 +1115,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6361180955828815231, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
+      propertyPath: missile
+      value: 
+      objectReference: {fileID: 8844575769401281428, guid: af0d5029a318e094aa675160e33f413e, type: 3}
+    - target: {fileID: 6361180955828815231, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
       propertyPath: frequency
       value: 1
       objectReference: {fileID: 0}
@@ -1351,7 +1355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8444421993390523468, guid: 518d74344cd25a94d9a9ff7d6a2674c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -92.9
+      value: -175.1
       objectReference: {fileID: 0}
     - target: {fileID: 8444421993390523468, guid: 518d74344cd25a94d9a9ff7d6a2674c3, type: 3}
       propertyPath: m_LocalPosition.y
