@@ -176,7 +176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3a267cbd6f9c4488530b128b38ca20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ps: {fileID: 0}
   maxHealth: 2
   attackDamage: 1
   currentHealth: 0
@@ -195,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ddd53896a3eaf4ead1acbb58c31c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missile: {fileID: 3969091788881210603, guid: bcccc1dc7464ff64a8743e57714dd3d9, type: 3}
+  enemyMissile: {fileID: 8844575769401281428, guid: af0d5029a318e094aa675160e33f413e, type: 3}
   enemyLauncher: {fileID: 6498678617336131681}
   launcherPos: {x: 0, y: 0, z: 0}
   clone: {fileID: 0}

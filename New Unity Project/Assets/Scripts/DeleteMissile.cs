@@ -5,7 +5,8 @@ using UnityEngine;
 public class DeleteMissile : MonoBehaviour
 {
 
-    private GameObject missile;
+    private GameObject playerMissile;
+    private GameObject enemyMissile;
 
     // Start is called before the first frame update
     void Start()
@@ -16,14 +17,20 @@ public class DeleteMissile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        missile = GameObject.Find("Missile(Clone)");
+        playerMissile = GameObject.Find("Missile(Clone)");
+        enemyMissile = GameObject.Find("Missile Variant(Clone)");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Missile") == true)
         {
-            Destroy(missile);
+            Destroy(playerMissile);
+        }
+
+        if (collision.CompareTag("EnemyMissile") == true)
+        {
+            Destroy(enemyMissile);
         }
     }
 }

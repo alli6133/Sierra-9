@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyLaser : MonoBehaviour
 {
-    public Rigidbody2D missile;
+    public Rigidbody2D enemyMissile;
     public GameObject enemyLauncher;
     public Vector3 launcherPos;
     public Rigidbody2D clone;
@@ -38,7 +38,7 @@ public class EnemyLaser : MonoBehaviour
 
     public void FireMissile()
     {
-        clone = Instantiate(missile, launcherPos, missile.transform.rotation);
+        clone = Instantiate(enemyMissile, launcherPos, enemyMissile.transform.rotation);
         clone.velocity = new Vector2(-13.0f, 0.0f);
         audioSource.PlayOneShot(firesound);
         laserTimer = laserCooldown;
