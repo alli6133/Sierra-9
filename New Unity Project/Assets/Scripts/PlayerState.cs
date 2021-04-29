@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class PlayerState : MonoBehaviour
 {
+    private BossBehaviour boss;
+    private EnemyBehaviour enemy;
     private HealthUI healthUI;
     public GameObject startPosition;
 
@@ -37,6 +39,9 @@ public class PlayerState : MonoBehaviour
 
     void Start()
     {
+        boss = (BossBehaviour)FindObjectOfType(typeof(BossBehaviour));
+        enemy = (EnemyBehaviour)FindObjectOfType(typeof(EnemyBehaviour));
+
         touch = GetComponent<TouchMovement>();
         normalMovementSpeed = GetComponent<TouchMovement>().movementSpeed;
 
@@ -95,7 +100,13 @@ public class PlayerState : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemyMissile"))
         {
-            TakeDamage(collision.gameObject.GetComponent<EnemyBehaviour>().attackDamage);
+            TakeDamage(enemy.attackDamage);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("BossMissile"))
+        {
+            TakeDamage(boss.attackDamage);
             Destroy(collision.gameObject);
         }
     }

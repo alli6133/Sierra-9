@@ -17,6 +17,8 @@ public class BossBehaviour : MonoBehaviour
     public Vector3 launcherPos;
     public Rigidbody2D clone;
 
+    public int attackDamage = 2;
+
     [SerializeField] private float laserTimer;
     [SerializeField] private float laserCooldown = 0.7f;
 
