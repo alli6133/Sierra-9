@@ -40,7 +40,6 @@ public class PlayerState : MonoBehaviour
     void Start()
     {
         boss = (BossBehaviour)FindObjectOfType(typeof(BossBehaviour));
-        enemy = (EnemyBehaviour)FindObjectOfType(typeof(EnemyBehaviour));
 
         touch = GetComponent<TouchMovement>();
         normalMovementSpeed = GetComponent<TouchMovement>().movementSpeed;
@@ -60,6 +59,8 @@ public class PlayerState : MonoBehaviour
     
     void Update()
     {
+        enemy = (EnemyBehaviour)FindObjectOfType(typeof(EnemyBehaviour));
+
         if (invincibilityBool)
         {
             invincibilityTimer -= Time.deltaTime;
