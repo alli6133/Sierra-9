@@ -11,7 +11,7 @@ public class CameraFollow : MonoBehaviour
     private Vector3 myPosition;
     [SerializeField] private float speed; 
 
-    private Vector3 offset = new Vector3(12f, 0f, -10);
+    private Vector3 offset = new Vector3(5f, 0f, -10);
     void Start()
     {
         myPosition = gameObject.transform.position;
