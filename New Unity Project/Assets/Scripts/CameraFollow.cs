@@ -15,12 +15,11 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         myPosition = gameObject.transform.position;
-        speed = tm.movementSpeed;
     }
-
 
     void LateUpdate()//anropas när alla update-funktioner har exekverats
     {
+        speed = tm.movementSpeed;
         transform.position = myPosition + transform.right * Time.time * speed;
     }
 }
