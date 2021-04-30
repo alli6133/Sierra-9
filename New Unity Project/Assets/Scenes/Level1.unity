@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: healthUI
       value: 
       objectReference: {fileID: 1010323809}
+    - target: {fileID: 6205926900011845825, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: movementSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6205926900011845826, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
       propertyPath: button
       value: 
@@ -1830,7 +1834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4434382676461023652, guid: 6c6b356d65a128e47bd41c91c606f876, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.5
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4434382676461023652, guid: 6c6b356d65a128e47bd41c91c606f876, type: 3}
       propertyPath: m_LocalPosition.z
