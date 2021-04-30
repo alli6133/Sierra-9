@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyLaser : MonoBehaviour
 {
     public Rigidbody2D enemyMissile;
-    public Transform enemyLauncher;
+    private GameObject enemyLauncher;
     public Vector3 launcherPos;
     public Rigidbody2D clone;
 
@@ -17,13 +17,14 @@ public class EnemyLaser : MonoBehaviour
 
     void Start()
     {
+        
         laserTimer = laserCooldown;
-        enemyLauncher = transform.Find("enemyLauncher");
-        //enemyLauncher = GameObject.Find("enemyLauncher");
+        
     }
 
     void Update()
     {
+        enemyLauncher = transform.Find("enemyLauncher").gameObject;
         launcherPos = enemyLauncher.transform.position;
 
         if (laserTimer < 0)

@@ -20,6 +20,14 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private float radius = 5f;
     [SerializeField] private float speed = 4f;
 
+    public Rigidbody2D enemyMissile;
+    private GameObject enemyLauncher;
+    public Vector3 launcherPos;
+    public Rigidbody2D clone;
+
+    [SerializeField] private float laserTimer;
+    [SerializeField] private float laserCooldown = 0.7f;
+
     //[SerializeField] private float offset = 0f; 
 
     void Start()
@@ -29,6 +37,7 @@ public class EnemyBehaviour : MonoBehaviour
         //rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
         //spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         myPosition = gameObject.transform.position;
+        laserTimer = laserCooldown;
     }
 
 
@@ -36,8 +45,26 @@ public class EnemyBehaviour : MonoBehaviour
     {
         //Använder sinusformeln för att röra fienden upp och ner
         transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency /*+ offset*/) * radius + transform.right * Time.time * speed;
-        //anropa EnemyLaser
+        enemyLauncher = GameObject.Find("enemyLauncher");
+        launcherPos = enemyLauncher.transform.position;
+
+        if (laserTimer < 0)
+        {
+            FireMissile();
+        }
+        else
+        {
+            laserTimer -= Time.deltaTime;
+        }
     }
+
+    public void FireMissile()
+    {
+        clone = Instantiate(enemyMissile, launcherPos, enemyMissile.transform.rotation);
+        clone.velocity = new Vector2(-13.0f, 0.0f);
+        laserTimer = laserCooldown;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Missile") == true)
