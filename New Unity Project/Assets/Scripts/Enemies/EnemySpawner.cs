@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        spawnPosition = transform.Find("Position");
 
     }
 
@@ -22,7 +23,6 @@ public class EnemySpawner : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             spawnEnemy();
-            print("Collider triggered");
         }
     }
 
