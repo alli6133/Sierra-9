@@ -1144,10 +1144,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6361180955828815225, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6361180955828815226, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1195,26 +1191,6 @@ PrefabInstance:
     - target: {fileID: 6361180955828815227, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
       propertyPath: m_Name
       value: Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 6361180955828815227, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6361180955828815231, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
-      propertyPath: radius
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6361180955828815231, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
-      propertyPath: missile
-      value: 
-      objectReference: {fileID: -7451350686328841735, guid: 63d74b8fa190e484b983a4afd4170cbf, type: 3}
-    - target: {fileID: 6361180955828815231, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
-      propertyPath: frequency
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6361180955828815231, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
-      propertyPath: laserCooldown
-      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
@@ -1311,27 +1287,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1727186654 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6361180955780480645, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
-  m_PrefabInstance: {fileID: 1585387441}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &1727186658
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727186654}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.07956314, y: 0.33898115}
-  serializedVersion: 2
-  m_Radius: 1.3222772
 --- !u!1 &1739233365
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &979907908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 979907909}
+  m_Layer: 0
+  m_Name: StartPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &979907909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979907908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6361180955828815226}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6361180955780480645
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6361180955780480644}
   - component: {fileID: 6361180955780480651}
+  - component: {fileID: 1727186658}
   m_Layer: 0
   m_Name: DmgBox
   m_TagString: Untagged
@@ -44,6 +75,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 20
+--- !u!58 &1727186658
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6361180955780480645}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07956314, y: 0.33898115}
+  serializedVersion: 2
+  m_Radius: 1.3222772
 --- !u!1 &6361180955828815227
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +105,7 @@ GameObject:
   - component: {fileID: 6361180955828815231}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,6 +123,7 @@ Transform:
   m_Children:
   - {fileID: 6361180955780480644}
   - {fileID: 7330572058414774046}
+  - {fileID: 979907909}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -118,7 +166,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a86a0379d811d094d980649c75e4056c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -163,14 +211,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 997dd40b9a5b9aa47b91f326241dba32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {fileID: 979907908}
   frequency: 1
-  radius: 2
-  missile: {fileID: 3969091788881210603, guid: bcccc1dc7464ff64a8743e57714dd3d9, type: 3}
+  radius: 8
+  missile: {fileID: -7451350686328841735, guid: 63d74b8fa190e484b983a4afd4170cbf, type: 3}
   bossLauncher: {fileID: 7218663385531073614}
   launcherPos: {x: 0, y: 0, z: 0}
   clone: {fileID: 0}
+  attackDamage: 2
   laserTimer: 0
-  laserCooldown: 0.7
+  laserCooldown: 0.8
 --- !u!1 &7218663385531073614
 GameObject:
   m_ObjectHideFlags: 0

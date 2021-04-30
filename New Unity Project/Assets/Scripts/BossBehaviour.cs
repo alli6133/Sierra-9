@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BossBehaviour : MonoBehaviour
 {
+    public GameObject startPosition;
     private Vector3 myPosition;
     private Rigidbody2D rigidBody2D;
     private SpriteRenderer spriteRenderer;
@@ -28,6 +29,7 @@ public class BossBehaviour : MonoBehaviour
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         myPosition = gameObject.transform.position;
         laserTimer = laserCooldown;
+        gameObject.transform.position = startPosition.transform.position;
     }
 
     void Update()

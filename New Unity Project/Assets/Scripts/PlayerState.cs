@@ -173,7 +173,7 @@ public class PlayerState : MonoBehaviour
     public void GameOver()
     {
         SceneManager.LoadScene("GameOver");
-        enemy = (EnemyBehaviour)FindObjectOfType(typeof(EnemyBehaviour));
-        Destroy(enemy);
+        /*enemy = (EnemyBehaviour)FindObjectOfType(typeof(EnemyBehaviour));
+        Destroy(enemy);*/
     }
 }
