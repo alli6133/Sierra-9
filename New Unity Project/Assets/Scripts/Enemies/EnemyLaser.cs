@@ -6,24 +6,24 @@ using UnityEngine;
 public class EnemyLaser : MonoBehaviour
 {
     public Rigidbody2D enemyMissile;
-    public GameObject enemyLauncher;
+    public Transform enemyLauncher;
     public Vector3 launcherPos;
     public Rigidbody2D clone;
 
     [SerializeField] private float laserTimer;
     [SerializeField] private float laserCooldown = 0.7f;
-
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip firesound;
 
     void Start()
     {
         laserTimer = laserCooldown;
+        enemyLauncher = transform.Find("enemyLauncher");
+        //enemyLauncher = GameObject.Find("enemyLauncher");
     }
 
     void Update()
     {
-        enemyLauncher = GameObject.Find("enemyLauncher");
         launcherPos = enemyLauncher.transform.position;
 
         if (laserTimer < 0)

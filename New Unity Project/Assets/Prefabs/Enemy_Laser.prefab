@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ddd53896a3eaf4ead1acbb58c31c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 6915392134832690143}
   enemyMissile: {fileID: 8844575769401281428, guid: af0d5029a318e094aa675160e33f413e, type: 3}
   enemyLauncher: {fileID: 6498678617336131681}
   launcherPos: {x: 0, y: 0, z: 0}
