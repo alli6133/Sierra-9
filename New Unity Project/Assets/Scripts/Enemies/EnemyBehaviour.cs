@@ -45,7 +45,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         //Använder sinusformeln för att röra fienden upp och ner
         transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency /*+ offset*/) * radius + transform.right * Time.time * speed;
-        enemyLauncher = GameObject.Find("enemyLauncher");
+        enemyLauncher = transform.Find("enemyLauncher").gameObject;
         launcherPos = enemyLauncher.transform.position;
 
         if (laserTimer < 0)
