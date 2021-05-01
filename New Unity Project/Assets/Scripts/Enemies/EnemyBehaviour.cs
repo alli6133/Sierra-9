@@ -8,7 +8,7 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     private PlayerState ps;
-    private Vector3 myPosition;
+    
     //private Rigidbody2D rigidBody2D; 
     //private SpriteRenderer spriteRenderer;
 
@@ -28,14 +28,14 @@ public class EnemyBehaviour : MonoBehaviour
         currentHealth = maxHealth;
         //rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
         //spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        myPosition = gameObject.transform.position;
+        //myPosition = gameObject.transform.position;
     }
 
 
     void Update()
     {
         //Använder sinusformeln för att röra fienden upp och ner
-        transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency /*+ offset*/) * radius + transform.right * Time.time * speed;
+        transform.position = transform.up * Mathf.Sin(Time.time * frequency /*+ offset*/) * radius + transform.right * Time.time * speed;
     }
 
 
