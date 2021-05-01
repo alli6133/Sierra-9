@@ -9,13 +9,15 @@ public class EnemySpawner : MonoBehaviour
     public GameObject player;
     public GameObject enemy;
     //private GameObject enemyClone;
-    public Transform spawnPosition;
+    public GameObject spawn;
+    public Vector3 spawnPos;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
-        spawnPosition = transform.Find("Position");
-
+        spawn = transform.Find("Spawn").gameObject;//hitta spawn-objektet
+        spawnPos = spawn.transform.position;//hitta spawnobjektets position
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -27,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
     private void spawnEnemy() {
-        GameObject enemyClone = Instantiate(enemy, spawnPosition);
+        GameObject enemyClone = Instantiate(enemy);
     }
 
     /*private void spawnEnemy() {
