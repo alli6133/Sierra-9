@@ -8,6 +8,6 @@ public class Restart : MonoBehaviour
 {
     public void Reset()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("MainMenu");
     }
 }

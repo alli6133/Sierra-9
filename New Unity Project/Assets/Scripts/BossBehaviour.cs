@@ -25,11 +25,12 @@ public class BossBehaviour : MonoBehaviour
 
     void Start()
     {
+        startPosition = GameObject.Find("StartPosition");
         rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         myPosition = gameObject.transform.position;
         laserTimer = laserCooldown;
-        gameObject.transform.position = startPosition.transform.position;
+        //gameObject.transform.position = startPosition.transform.position;
     }
 
     void Update()

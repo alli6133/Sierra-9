@@ -59,5 +59,13 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemyMissile
       objectReference: {fileID: 0}
+    - target: {fileID: 4166739923069890717, guid: bcccc1dc7464ff64a8743e57714dd3d9, type: 3}
+      propertyPath: m_Size.y
+      value: 0.34267765
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166739923069890717, guid: bcccc1dc7464ff64a8743e57714dd3d9, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.99005497
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcccc1dc7464ff64a8743e57714dd3d9, type: 3}
