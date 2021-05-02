@@ -10,7 +10,7 @@ public class LaserCannon : MonoBehaviour
     public Button button;
     public GameObject laserLauncher;
     public Vector3 launcherPos;
-    public Rigidbody2D clone;
+    private Rigidbody2D clone;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip firesound;
 
