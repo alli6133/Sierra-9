@@ -15,6 +15,7 @@ public class EnemyBehaviour : MonoBehaviour
     public int maxHealth = 1;
     public int attackDamage = 1;
     public double currentHealth;
+    private Vector3 myPosition;
     
     [SerializeField] private float frequency = 5f;
     [SerializeField] private float radius = 5f;
@@ -28,14 +29,14 @@ public class EnemyBehaviour : MonoBehaviour
         currentHealth = maxHealth;
         //rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
         //spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        //myPosition = gameObject.transform.position;
+        myPosition = gameObject.transform.position;
     }
 
 
     void Update()
     {
         //Använder sinusformeln för att röra fienden upp och ner
-        transform.position = transform.up * Mathf.Sin(Time.time * frequency /*+ offset*/) * radius + transform.right * Time.time * speed;
+        transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency /*+ offset*/) * radius + transform.right * Time.time * speed;
     }
 
 
