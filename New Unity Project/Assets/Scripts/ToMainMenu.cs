@@ -1,13 +1,12 @@
-//Axel Sterner
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class Restart : MonoBehaviour
+public class ToMainMenu : MonoBehaviour
 {
     public void Reset()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("MainMenu");
     }
 }
