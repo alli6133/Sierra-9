@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: -2970642674342726263}
   m_Layer: 0
   m_Name: Enemy_Laser
-  m_TagString: Enemy
+  m_TagString: EnemyLaser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,15 +175,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3a267cbd6f9c4488530b128b38ca20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPos: {fileID: 0}
   maxHealth: 2
   attackDamage: 1
   currentHealth: 0
   frequency: 5
   radius: 5
   speed: -3
+  readyToFire: 0
   enemyMissile: {fileID: 8844575769401281428, guid: af0d5029a318e094aa675160e33f413e, type: 3}
   launcherPos: {x: 0, y: 0, z: 0}
   clone: {fileID: 0}
   laserTimer: 0
-  laserCooldown: 0.7
+  laserCooldown: 0.8

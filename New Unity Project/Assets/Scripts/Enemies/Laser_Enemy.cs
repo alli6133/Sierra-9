@@ -19,6 +19,7 @@ public class Laser_Enemy : MonoBehaviour
     [SerializeField] private float frequency = 5f;
     [SerializeField] private float radius = 5f;
     [SerializeField] private float speed = 4f;
+    public bool readyToFire = false;
 
     public Rigidbody2D enemyMissile;
     private GameObject enemyLauncher;
@@ -48,7 +49,7 @@ public class Laser_Enemy : MonoBehaviour
         enemyLauncher = transform.Find("enemyLauncher").gameObject;
         launcherPos = enemyLauncher.transform.position;
 
-        if (laserTimer < 0)
+        if (laserTimer < 0 && readyToFire == true)//Axel
         {
             FireMissile();
         }
