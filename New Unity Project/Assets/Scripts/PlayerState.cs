@@ -172,6 +172,7 @@ public class PlayerState : MonoBehaviour
 
     public void GameOver()
     {
-        SceneManager.LoadScene("GameOver");
+        //SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
