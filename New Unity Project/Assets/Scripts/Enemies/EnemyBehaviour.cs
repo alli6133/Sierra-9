@@ -16,7 +16,17 @@ public class EnemyBehaviour : MonoBehaviour
     public int attackDamage = 1;
     public double currentHealth;
     private Vector3 myPosition;
-    
+
+    //Olivia
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip deathClip;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
+    private bool removeGameObject = false;
+    private float timer = 0f;
+    [SerializeField] private float timeBeforeDeletion = 1f; // inte tar bort fiendeobjektet på direkten
+
+
     [SerializeField] private float frequency = 5f;
     [SerializeField] private float radius = 5f;
     [SerializeField] private float speed = 4f;
@@ -37,6 +47,16 @@ public class EnemyBehaviour : MonoBehaviour
     {
         //Använder sinusformeln för att röra fienden upp och ner
         transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency /*+ offset*/) * radius + transform.right * Time.time * speed;
+
+        // Olivia, när fienden dör så kommer timer sättas innan objektet förstörs
+        if (removeGameObject == true)
+        {
+            timer += Time.deltaTime;
+            if (timer >= timeBeforeDeletion)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
 
@@ -55,7 +75,10 @@ public class EnemyBehaviour : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            audioSource.PlayOneShot(deathClip);
+            spriteRenderer.sprite = null;
+            GetComponent<Collider2D>().enabled = false; //stänger av collidern, undviker buggar
+            removeGameObject = true;
         }
     }
 }
