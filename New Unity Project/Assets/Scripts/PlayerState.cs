@@ -3,10 +3,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerState : MonoBehaviour
 {
+    [SerializeField] private Text repair;
+    [SerializeField] private Text critical;
     private BossBehaviour boss;
     private EnemyBehaviour enemy;
     private HealthUI healthUI;
@@ -56,6 +59,7 @@ public class PlayerState : MonoBehaviour
         invincibilityTimer = invincibilityDuration;
         oneShotTimer = oneShotDuration;
         speedUpTimer = speedUpDuration;
+       
     }
     
     void Update()
@@ -135,6 +139,17 @@ public class PlayerState : MonoBehaviour
         }
 
         healthUI.SetHealth(currentHealth);
+
+        if (currentHealth == 5)
+        {
+            repair.gameObject.SetActive(true);
+        }
+
+        if(currentHealth <= 3)
+        {
+            repair.gameObject.SetActive(false);
+            critical.gameObject.SetActive(true);
+        }
 
         if (currentHealth <= 0)
         {
