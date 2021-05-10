@@ -154,7 +154,7 @@ MonoBehaviour:
   timeBeforeDeletion: 3
   frequency: 5
   radius: 5
-  speed: 4
+  speed: 6
 --- !u!82 &2099050046512077528
 AudioSource:
   m_ObjectHideFlags: 0

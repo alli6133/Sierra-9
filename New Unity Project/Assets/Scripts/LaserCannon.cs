@@ -37,7 +37,7 @@ public class LaserCannon : MonoBehaviour
         if (laserTimer < 0)
         {
             clone = Instantiate(missile, launcherPos, missile.transform.rotation);
-            clone.velocity = new Vector2(13.0f, 0.0f);
+            clone.velocity = new Vector2(108.0f, 0.0f);
             audioSource.PlayOneShot(firesound);
             laserTimer = laserCooldown;
         }

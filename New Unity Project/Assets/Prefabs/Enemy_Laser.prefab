@@ -186,4 +186,4 @@ MonoBehaviour:
   launcherPos: {x: 0, y: 0, z: 0}
   clone: {fileID: 0}
   laserTimer: 0
-  laserCooldown: 0.8
+  laserCooldown: 0.87

@@ -62,7 +62,7 @@ public class Laser_Enemy : MonoBehaviour
     public void FireMissile()
     {
         clone = Instantiate(enemyMissile, launcherPos, enemyMissile.transform.rotation);
-        clone.velocity = new Vector2(-10.0f, 0.0f);
+        clone.velocity = new Vector2(-60.0f, 0.0f);
         laserTimer = laserCooldown;
     }
 
