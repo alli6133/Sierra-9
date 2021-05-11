@@ -41,8 +41,20 @@ public class PlayerState : MonoBehaviour
     private float speedUpDuration = 5f;
     private float normalMovementSpeed;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip deathClip;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
+    private bool removeGameObject = false;
+    private float timer = 0f;
+    [SerializeField] private float timeBeforeDeletion = 5f;
+
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "Level1") {
+            //Skapa en metod och lägg in den här. Metoden ska flytta spelaren in i kamerans ram, det ska förestå som en typ av intro-"animation" för första leveln
+        }
+
         boss = (BossBehaviour)FindObjectOfType(typeof(BossBehaviour));
 
         touch = GetComponent<TouchMovement>();
@@ -105,6 +117,15 @@ public class PlayerState : MonoBehaviour
             touch.movementSpeed = normalMovementSpeed;
             speedUpTimer = speedUpDuration;
         }
+
+        if (removeGameObject == true)
+        {
+            timer += Time.deltaTime;
+            if (timer >= timeBeforeDeletion)
+            {
+                GameOver();
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -153,7 +174,10 @@ public class PlayerState : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            GameOver();
+            audioSource.PlayOneShot(deathClip);
+            spriteRenderer.sprite = null;
+            GetComponent<EdgeCollider2D>().enabled = false; //stänger av collidern, undviker buggar
+            removeGameObject = true;
         }
     }
 
@@ -185,9 +209,13 @@ public class PlayerState : MonoBehaviour
         speedUpBool = true;
     }
 
+    private void MovePlayerInFrame() {
+
+    }
+
     public void GameOver()
     {
-        //SceneManager.LoadScene("GameOver");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("GameOver");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

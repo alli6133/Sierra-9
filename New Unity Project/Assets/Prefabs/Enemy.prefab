@@ -145,16 +145,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afbe3358f92df3c47978399bfcb6f67d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 1
   attackDamage: 1
   currentHealth: 0
   audioSource: {fileID: 2099050046512077528}
   deathClip: {fileID: 8300000, guid: 5b6c418aa1e61c34f89a2325cb4352e9, type: 3}
   spriteRenderer: {fileID: 8685781064531975196}
   timeBeforeDeletion: 3
-  frequency: 5
-  radius: 5
-  speed: 6
+  frequency: 3
+  radius: 4
+  speed: -8
 --- !u!82 &2099050046512077528
 AudioSource:
   m_ObjectHideFlags: 0

@@ -31,6 +31,14 @@ public class Laser_Enemy : MonoBehaviour
 
     //[SerializeField] private float offset = 0f; 
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip deathClip;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
+    private bool removeGameObject = false;
+    private float timer = 0f;
+    [SerializeField] private float timeBeforeDeletion = 1f;
+
     void Start()
     {
         ps = GameObject.Find("Player").GetComponent<PlayerState>();
@@ -57,6 +65,15 @@ public class Laser_Enemy : MonoBehaviour
         {
             laserTimer -= Time.deltaTime;
         }
+
+        if (removeGameObject == true)
+        {
+            timer += Time.deltaTime;
+            if (timer >= timeBeforeDeletion)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     public void FireMissile()
@@ -81,7 +98,10 @@ public class Laser_Enemy : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            audioSource.PlayOneShot(deathClip);
+            spriteRenderer.sprite = null;
+            GetComponent<Collider2D>().enabled = false; //stänger av collidern, undviker buggar
+            removeGameObject = true;
         }
     }
 }
