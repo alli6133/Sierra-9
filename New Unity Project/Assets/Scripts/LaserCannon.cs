@@ -40,6 +40,7 @@ public class LaserCannon : MonoBehaviour
             clone.velocity = new Vector2(108.0f, 0.0f);
             audioSource.PlayOneShot(firesound);
             laserTimer = laserCooldown;
+            Vibration.Vibrate(100);
         }
     }
 }
