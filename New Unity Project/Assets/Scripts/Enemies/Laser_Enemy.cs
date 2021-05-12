@@ -99,6 +99,7 @@ public class Laser_Enemy : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            readyToFire = false;
             audioSource.PlayOneShot(deathClip);
             spriteRenderer.sprite = null;
             GetComponent<Collider2D>().enabled = false; //stänger av collidern, undviker buggar

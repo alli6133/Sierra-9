@@ -1535,6 +1535,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1263613521}
     m_Modifications:
+    - target: {fileID: -2970642674342726263, guid: ab365ec269701dc4c910f14baea2bce6, type: 3}
+      propertyPath: readyToFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 135709204, guid: ab365ec269701dc4c910f14baea2bce6, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6915392134832690137, guid: ab365ec269701dc4c910f14baea2bce6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2698,6 +2706,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1263613521}
     m_Modifications:
+    - target: {fileID: -2970642674342726263, guid: ab365ec269701dc4c910f14baea2bce6, type: 3}
+      propertyPath: readyToFire
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6915392134832690137, guid: ab365ec269701dc4c910f14baea2bce6, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2769,6 +2781,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1263613521}
     m_Modifications:
+    - target: {fileID: -2970642674342726263, guid: ab365ec269701dc4c910f14baea2bce6, type: 3}
+      propertyPath: readyToFire
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6915392134832690137, guid: ab365ec269701dc4c910f14baea2bce6, type: 3}
       propertyPath: m_RootOrder
       value: 1
