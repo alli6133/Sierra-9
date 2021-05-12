@@ -32,10 +32,12 @@ public class BossBehaviour : MonoBehaviour
         laserTimer = laserCooldown;
         //gameObject.transform.position = startPosition.transform.position;
     }
+    private float timeSinceLevelLoad = 0f;//Axel
 
     void Update()
     {
-        transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency) * radius + transform.right * Time.time * speed;
+        timeSinceLevelLoad += Time.deltaTime;
+        transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency) * radius + transform.right * timeSinceLevelLoad * speed;
         bossLauncher = GameObject.Find("bossLauncher");
         launcherPos = bossLauncher.transform.position;
 

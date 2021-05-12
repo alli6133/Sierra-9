@@ -42,11 +42,13 @@ public class EnemyBehaviour : MonoBehaviour
         myPosition = gameObject.transform.position;
     }
 
+   private float timeSinceLevelLoad = 0f;//Axel
 
     void Update()
     {
+        timeSinceLevelLoad += Time.deltaTime;
         //Använder sinusformeln för att röra fienden upp och ner
-        transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency /*+ offset*/) * radius + transform.right * Time.time * speed;
+        transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency /*+ offset*/) * radius + transform.right * timeSinceLevelLoad * speed;
 
         // Olivia, när fienden dör så kommer timer sättas innan objektet förstörs
         if (removeGameObject == true)
