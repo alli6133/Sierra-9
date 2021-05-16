@@ -48,6 +48,7 @@ public class Laser_Enemy : MonoBehaviour
         myPosition = gameObject.transform.position;
         laserTimer = laserCooldown;
     }
+    
     private float timeSinceLevelLoad = 0f;//Axel
 
     void Update()

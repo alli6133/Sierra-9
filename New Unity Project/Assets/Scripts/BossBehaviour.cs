@@ -9,7 +9,7 @@ public class BossBehaviour : MonoBehaviour
     private Vector3 myPosition;
     private Rigidbody2D rigidBody2D;
     private SpriteRenderer spriteRenderer;
-    private float speed = 5f; 
+    private float speed = 8f; 
     [SerializeField] private float frequency = 5f; 
     [SerializeField] private float radius = 5f;
 
