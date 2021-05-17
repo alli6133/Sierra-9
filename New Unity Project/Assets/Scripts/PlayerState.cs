@@ -150,7 +150,6 @@ public class PlayerState : MonoBehaviour
         {
             TakeDamage(boss.attackDamage);
             Destroy(collision.gameObject);
-
         }
     }
 
