@@ -7,15 +7,17 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    private PlayerState ps;
-    
-    //private Rigidbody2D rigidBody2D; 
-    //private SpriteRenderer spriteRenderer;
-
     public int maxHealth = 1;
     public int attackDamage = 1;
     public double currentHealth;
+
+    private PlayerState ps;
+    private PowerupSpawner powerupSpawner;
+
     private Vector3 myPosition;
+    private Vector3 deathPosition;
+    private Quaternion deathRotation;
+
 
     //Olivia
     [SerializeField] private AudioSource audioSource;
@@ -23,7 +25,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     private bool removeGameObject = false;
-    private float timer = 0f;
+    [SerializeField] private float timer = 0f;
     [SerializeField] private float timeBeforeDeletion = 1f; // inte tar bort fiendeobjektet på direkten
 
 
@@ -36,13 +38,12 @@ public class EnemyBehaviour : MonoBehaviour
     void Start()
     {
         ps = GameObject.Find("Player").GetComponent<PlayerState>();
+        powerupSpawner = GameObject.Find("PowerupSpawner").GetComponent<PowerupSpawner>();
         currentHealth = maxHealth;
-        //rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
-        //spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         myPosition = gameObject.transform.position;
     }
 
-   private float timeSinceLevelLoad = 0f;//Axel
+    private float timeSinceLevelLoad = 0f;//Axel
 
     void Update()
     {
@@ -80,7 +81,18 @@ public class EnemyBehaviour : MonoBehaviour
             audioSource.PlayOneShot(deathClip);
             spriteRenderer.sprite = null;
             GetComponent<Collider2D>().enabled = false; //stänger av collidern, undviker buggar
+            SpawnPowerupOnDeath();
             removeGameObject = true;
+        }
+    }
+
+    void SpawnPowerupOnDeath()
+    {
+        if (Random.value <= 0.5)
+        {
+            deathPosition = gameObject.transform.position;
+            deathRotation = gameObject.transform.rotation;
+            powerupSpawner.SpawnPowerup(deathPosition, deathRotation);
         }
     }
 }

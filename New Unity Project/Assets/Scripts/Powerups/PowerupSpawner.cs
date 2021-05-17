@@ -10,31 +10,17 @@ public class PowerupSpawner : MonoBehaviour
     public GameObject speedUp;
 
     private int randomNumber;
-    private float spawnTimer;
-    private float spawnCooldown = 5f;
 
-    void Start()
+    public void SpawnPowerup(Vector3 position, Quaternion rotation)
     {
-        spawnTimer = spawnCooldown;
-    }
+        randomNumber = Random.Range(0, 4);
 
-    void Update()
-    {    
-        spawnTimer -= Time.deltaTime;
-
-        if(spawnTimer <= 0)
+        switch (randomNumber)
         {
-            randomNumber = Random.Range(0, 4);
-
-            switch (randomNumber)
-            {
-                case 0: Instantiate(invincibility, transform); break;
-                case 1: Instantiate(oneShot, transform); break;
-                case 2: Instantiate(shield, transform); break;
-                case 3: Instantiate(speedUp, transform); break;
-            }
-
-            spawnTimer = spawnCooldown;
+            case 0: Instantiate(invincibility, position, rotation); break;
+            case 1: Instantiate(oneShot, position, rotation); break;
+            case 2: Instantiate(shield, position, rotation); break;
+            case 3: Instantiate(speedUp, position, rotation); break;
         }
     }
 }
