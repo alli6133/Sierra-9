@@ -15,7 +15,6 @@ public class TouchMovement : MonoBehaviour
 
     private bool maxYPosReached;
     private bool minYPosReached;
-    private bool maxMinPosReached;
 
     private Vector3 myPosition;
     private Rigidbody2D rigidBody2D;
@@ -23,8 +22,8 @@ public class TouchMovement : MonoBehaviour
 
     void Start()
     {
-        maxYPos = GameObject.Find("maxYBorder").GetComponent<Transform>().position.y;
-        minYPos = GameObject.Find("minYBorder").GetComponent<Transform>().position.y;
+        maxYPos = GameObject.Find("MaxYBorder").GetComponent<Transform>().position.y;
+        minYPos = GameObject.Find("MinYBorder").GetComponent<Transform>().position.y;
         rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
         rigidBody2D.gravityScale = 0;
     }
