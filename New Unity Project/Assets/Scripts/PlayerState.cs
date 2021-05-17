@@ -43,6 +43,9 @@ public class PlayerState : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip deathClip;
+    [SerializeField] private AudioClip enemyDeathClip;
+    [SerializeField] private AudioClip powerUpActivatesClip;
+    [SerializeField] private AudioClip playerDamageClip;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     private bool removeGameObject = false;
@@ -130,8 +133,15 @@ public class PlayerState : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemyMissile") || collision.gameObject.CompareTag("EnemyLaser"))
+        if (collision.gameObject.CompareTag("EnemyMissile") || collision.gameObject.CompareTag("EnemyLaser"))
         {
+            TakeDamage(enemyAttackDamage);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            audioSource.PlayOneShot(enemyDeathClip);
             TakeDamage(enemyAttackDamage);
             Destroy(collision.gameObject);
         }
@@ -143,14 +153,20 @@ public class PlayerState : MonoBehaviour
         }
     }
 
+    private void playerTakesDamageAudio() {
+        audioSource.PlayOneShot(playerDamageClip);
+    }
+
     public void TakeDamage(int damage)
     {
         if (!invincibilityBool && !shieldBool)
         {
+            audioSource.PlayOneShot(playerDamageClip);
             currentHealth -= damage;
         }
         else if (!invincibilityBool && shieldBool)
         {
+            //audioSource.PlayOneShot(playerDamageClip);
             currentShieldHealth -= damage;
         }
         
@@ -188,25 +204,33 @@ public class PlayerState : MonoBehaviour
 
     public void Invincibility()
     {
+        powerUpAudio();
         invincibilityBool = true;
     }
 
     public void OneShot()
     {
+        powerUpAudio();
         currentAttackDamage = oneShotDamage;
         oneShotBool = true;
     }
 
     public void Shield()
     {
+        powerUpAudio();
         currentShieldHealth = shieldStrength;
         shieldBool = true;
     }
 
     public void SpeedUp()
     {
+        powerUpAudio();
         touch.movementSpeed *= 2;
         speedUpBool = true;
+    }
+
+    private void powerUpAudio() {
+        audioSource.PlayOneShot(powerUpActivatesClip);
     }
 
     private void MovePlayerInFrame() {

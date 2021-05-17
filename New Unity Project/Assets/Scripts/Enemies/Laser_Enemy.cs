@@ -8,9 +8,11 @@ using UnityEngine;
 public class Laser_Enemy : MonoBehaviour
 {
     private PlayerState ps;
+    private PowerupSpawner powerupSpawner;
+
     private Vector3 myPosition;
-    //private Rigidbody2D rigidBody2D; 
-    //private SpriteRenderer spriteRenderer;
+    private Vector3 deathPosition;
+    private Quaternion deathRotation;
 
     public int maxHealth = 2;
     public int attackDamage = 1;
@@ -42,12 +44,12 @@ public class Laser_Enemy : MonoBehaviour
     void Start()
     {
         ps = GameObject.Find("Player").GetComponent<PlayerState>();
+        powerupSpawner = GameObject.Find("PowerupSpawner").GetComponent<PowerupSpawner>();
         currentHealth = maxHealth;
-        //rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
-        //spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         myPosition = gameObject.transform.position;
         laserTimer = laserCooldown;
     }
+    
     private float timeSinceLevelLoad = 0f;//Axel
 
     void Update()
@@ -103,7 +105,18 @@ public class Laser_Enemy : MonoBehaviour
             audioSource.PlayOneShot(deathClip);
             spriteRenderer.sprite = null;
             GetComponent<Collider2D>().enabled = false; //stänger av collidern, undviker buggar
+            SpawnPowerupOnDeath();
             removeGameObject = true;
+        }
+    }
+
+    void SpawnPowerupOnDeath()
+    {
+        if (Random.value <= 0.5)
+        {
+            deathPosition = gameObject.transform.position;
+            deathRotation = gameObject.transform.rotation;
+            powerupSpawner.SpawnPowerup(deathPosition, deathRotation);
         }
     }
 }

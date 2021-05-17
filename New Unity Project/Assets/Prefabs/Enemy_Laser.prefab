@@ -182,7 +182,7 @@ MonoBehaviour:
   frequency: 5
   radius: 5
   speed: -3
-  readyToFire: 0
+  readyToFire: 1
   enemyMissile: {fileID: 8844575769401281428, guid: af0d5029a318e094aa675160e33f413e, type: 3}
   launcherPos: {x: 0, y: 0, z: 0}
   clone: {fileID: 0}
@@ -204,7 +204,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.509
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
