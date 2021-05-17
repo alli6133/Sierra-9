@@ -18,11 +18,12 @@ public static class Vibration
         if (IsAndroid())
         {
             vibrator.Call("vibrate", milliseconds);
+            Debug.Log("vibrera");
         }
-       /* else
+        else
         {
             Handheld.Vibrate();
-        }*/
+        }
     }
 
     public static void Cancel()
