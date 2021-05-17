@@ -26,7 +26,7 @@ public class EnemyBehaviour : MonoBehaviour
     private float timer = 0f;
     [SerializeField] private float timeBeforeDeletion = 1f; // inte tar bort fiendeobjektet på direkten
 
-
+    ParticleSystem system;//försök att aktivera particles
     [SerializeField] private float frequency = 5f;
     [SerializeField] private float radius = 5f;
     [SerializeField] private float speed = 4f;
@@ -80,6 +80,7 @@ public class EnemyBehaviour : MonoBehaviour
             audioSource.PlayOneShot(deathClip);
             spriteRenderer.sprite = null;
             GetComponent<Collider2D>().enabled = false; //stänger av collidern, undviker buggar
+            system.Play();
             removeGameObject = true;
         }
     }

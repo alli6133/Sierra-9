@@ -146,6 +146,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.5227811
       objectReference: {fileID: 0}
+    - target: {fileID: 1084467062140505497, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1417480372639549089, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2218,6 +2222,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1263613521}
     m_Modifications:
+    - target: {fileID: 7139321626691617257, guid: 0e14208c019c6e84e8ef475c4d45ecda, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8685781064531975197, guid: 0e14208c019c6e84e8ef475c4d45ecda, type: 3}
       propertyPath: m_Name
       value: Enemy
