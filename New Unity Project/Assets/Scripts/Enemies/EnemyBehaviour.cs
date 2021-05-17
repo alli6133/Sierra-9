@@ -40,6 +40,7 @@ public class EnemyBehaviour : MonoBehaviour
         //rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
         //spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         myPosition = gameObject.transform.position;
+        system = GetComponentInChildren<ParticleSystem>();
     }
 
    private float timeSinceLevelLoad = 0f;//Axel
