@@ -17,7 +17,9 @@ public class Laser_Enemy : MonoBehaviour
     public int maxHealth = 2;
     public int attackDamage = 1;
     public double currentHealth;
-    
+
+
+    ParticleSystem system;
     [SerializeField] private float frequency = 5f;
     [SerializeField] private float radius = 5f;
     [SerializeField] private float speed = 4f;
@@ -48,6 +50,7 @@ public class Laser_Enemy : MonoBehaviour
         currentHealth = maxHealth;
         myPosition = gameObject.transform.position;
         laserTimer = laserCooldown;
+        system = GetComponentInChildren<ParticleSystem>();
     }
     
     private float timeSinceLevelLoad = 0f;//Axel
@@ -106,6 +109,7 @@ public class Laser_Enemy : MonoBehaviour
             spriteRenderer.sprite = null;
             GetComponent<Collider2D>().enabled = false; //stänger av collidern, undviker buggar
             SpawnPowerupOnDeath();
+            system.Play();
             removeGameObject = true;
         }
     }
