@@ -154,8 +154,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 8685781064531975196}
   timeBeforeDeletion: 3
   frequency: 3
-  radius: 4
-  speed: -8
+  radius: 2
+  speed: -10
 --- !u!82 &2099050046512077528
 AudioSource:
   m_ObjectHideFlags: 0

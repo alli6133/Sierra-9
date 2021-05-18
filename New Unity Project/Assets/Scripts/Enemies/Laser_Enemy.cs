@@ -8,6 +8,7 @@ using UnityEngine;
 public class Laser_Enemy : MonoBehaviour
 {
     private PlayerState ps;
+    private ParticleSystem system;
     private PowerupSpawner powerupSpawner;
 
     private Vector3 myPosition;
@@ -45,6 +46,7 @@ public class Laser_Enemy : MonoBehaviour
     {
         ps = GameObject.Find("Player").GetComponent<PlayerState>();
         powerupSpawner = GameObject.Find("PowerupSpawner").GetComponent<PowerupSpawner>();
+        system = GetComponentInChildren<ParticleSystem>();
         currentHealth = maxHealth;
         myPosition = gameObject.transform.position;
         laserTimer = laserCooldown;
@@ -101,6 +103,7 @@ public class Laser_Enemy : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            system.Play();
             readyToFire = false;
             audioSource.PlayOneShot(deathClip);
             spriteRenderer.sprite = null;
