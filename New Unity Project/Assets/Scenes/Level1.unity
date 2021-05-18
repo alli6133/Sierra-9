@@ -1906,6 +1906,22 @@ PrefabInstance:
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7461981484242475040, guid: 0e14208c019c6e84e8ef475c4d45ecda, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461981484242475040, guid: 0e14208c019c6e84e8ef475c4d45ecda, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 10.149445
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461981484242475040, guid: 0e14208c019c6e84e8ef475c4d45ecda, type: 3}
+      propertyPath: ShapeModule.m_Position.x
+      value: -5.0309467
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461981484242475040, guid: 0e14208c019c6e84e8ef475c4d45ecda, type: 3}
+      propertyPath: ShapeModule.m_Position.y
+      value: 0.8461547
+      objectReference: {fileID: 0}
     - target: {fileID: 8685781064531975197, guid: 0e14208c019c6e84e8ef475c4d45ecda, type: 3}
       propertyPath: m_Name
       value: Enemy
