@@ -75,6 +75,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 20
+  audioSource: {fileID: 0}
+  deathClip: {fileID: 0}
+  damageTakenClip: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  timeBeforeDeletion: 5
 --- !u!58 &1727186658
 CircleCollider2D:
   m_ObjectHideFlags: 0

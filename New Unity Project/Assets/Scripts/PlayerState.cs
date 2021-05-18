@@ -14,6 +14,8 @@ public class PlayerState : MonoBehaviour
     private EnemyBehaviour enemy;
     private HealthUI healthUI;
     public GameObject startPosition;
+    public GameObject levelCollider;
+    public GameObject rocketBoost;
 
     public int maxHealth = 1;
     private int currentHealth;
@@ -193,6 +195,8 @@ public class PlayerState : MonoBehaviour
             audioSource.PlayOneShot(deathClip);
             spriteRenderer.sprite = null;
             GetComponent<EdgeCollider2D>().enabled = false; //stänger av collidern, undviker buggar
+            levelCollider.SetActive(false);
+            rocketBoost.SetActive(false);
             removeGameObject = true;
         }
     }

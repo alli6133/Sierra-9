@@ -1,15 +1,15 @@
-//Axel Sterner
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToggleFire : MonoBehaviour
+public class PlayerBulletDeadZone : MonoBehaviour
 {
-    private GameObject enemyLaser;
+
+    private GameObject playerLaser;
 
     void Start()
     {
-        enemyLaser = GameObject.Find("Enemy_Laser");
+        playerLaser = GameObject.Find("Missile");
     }
 
     // Update is called once per frame
@@ -20,9 +20,9 @@ public class ToggleFire : MonoBehaviour
 
     private void OnTriggerEnter2D (Collider2D collision)
     {
-        if (collision.CompareTag("EnemyLaser"))
+        if (collision.CompareTag("Missile"))
         {
-            collision.gameObject.GetComponent<Laser_Enemy>().readyToFire = true;
+            Destroy(collision.gameObject);
         }
     }
 }

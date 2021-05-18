@@ -8,6 +8,7 @@ using UnityEngine;
 public class Laser_Enemy : MonoBehaviour
 {
     private PlayerState ps;
+    private ParticleSystem system;
     private PowerupSpawner powerupSpawner;
 
     private Vector3 myPosition;
@@ -17,9 +18,7 @@ public class Laser_Enemy : MonoBehaviour
     public int maxHealth = 2;
     public int attackDamage = 1;
     public double currentHealth;
-
-
-    ParticleSystem system;
+    
     [SerializeField] private float frequency = 5f;
     [SerializeField] private float radius = 5f;
     [SerializeField] private float speed = 4f;
@@ -47,10 +46,10 @@ public class Laser_Enemy : MonoBehaviour
     {
         ps = GameObject.Find("Player").GetComponent<PlayerState>();
         powerupSpawner = GameObject.Find("PowerupSpawner").GetComponent<PowerupSpawner>();
+        system = GetComponentInChildren<ParticleSystem>();
         currentHealth = maxHealth;
         myPosition = gameObject.transform.position;
         laserTimer = laserCooldown;
-        system = GetComponentInChildren<ParticleSystem>();
     }
     
     private float timeSinceLevelLoad = 0f;//Axel
@@ -104,12 +103,12 @@ public class Laser_Enemy : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            system.Play();
             readyToFire = false;
             audioSource.PlayOneShot(deathClip);
             spriteRenderer.sprite = null;
             GetComponent<Collider2D>().enabled = false; //stänger av collidern, undviker buggar
             SpawnPowerupOnDeath();
-            system.Play();
             removeGameObject = true;
         }
     }
