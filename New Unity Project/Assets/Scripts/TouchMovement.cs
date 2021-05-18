@@ -23,8 +23,8 @@ public class TouchMovement : MonoBehaviour
 
     void Start()
     {
-        maxYPos = GameObject.Find("maxYBorder").GetComponent<Transform>().position.y;
-        minYPos = GameObject.Find("minYBorder").GetComponent<Transform>().position.y;
+        maxYPos = GameObject.Find("MaxYPos").GetComponent<Transform>().position.y;
+        minYPos = GameObject.Find("MinYPos").GetComponent<Transform>().position.y;
         rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
         rigidBody2D.gravityScale = 0;
     }
