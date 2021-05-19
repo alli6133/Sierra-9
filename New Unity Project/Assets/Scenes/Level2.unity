@@ -1817,6 +1817,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1421256072 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4880148955827051600, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+  m_PrefabInstance: {fileID: 1854650563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1432835117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2396,6 +2401,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1725628425847596468, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725628425847596468, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725628425847596468, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 1.9938426
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725628425847596468, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 3.361586
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725628425847596468, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: ShapeModule.m_Position.x
+      value: -2.7388458
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725628425847596468, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: ShapeModule.m_Position.y
+      value: -0.7966249
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725628425847596468, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848999765897305938, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848999765897305938, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848999765897305938, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848999765897305938, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.68
+      objectReference: {fileID: 0}
     - target: {fileID: 6205926900011845824, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
       propertyPath: m_GravityScale
       value: 0
@@ -2497,6 +2546,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1204017345}
     - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: dmgParticles
+      value: 
+      objectReference: {fileID: 1421256072}
+    - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
       propertyPath: levelCollider
       value: 
       objectReference: {fileID: 1602018739}
@@ -2504,6 +2557,18 @@ PrefabInstance:
       propertyPath: startPosition
       value: 
       objectReference: {fileID: 1822699313}
+    - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: playerDeathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bbc61f99e94c25947b928b2c85726539, type: 3}
+    - target: {fileID: 8141410111691972852, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723164115068450069, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
 --- !u!114 &1854650564 stripped

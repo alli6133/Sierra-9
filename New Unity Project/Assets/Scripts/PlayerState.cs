@@ -16,6 +16,8 @@ public class PlayerState : MonoBehaviour
     public GameObject startPosition;
     public GameObject levelCollider;
     public GameObject rocketBoost;
+    public GameObject dmgParticles;
+    
 
     public int maxHealth = 1;
     private int currentHealth;
@@ -48,6 +50,7 @@ public class PlayerState : MonoBehaviour
     [SerializeField] private AudioClip enemyDeathClip;
     [SerializeField] private AudioClip powerUpActivatesClip;
     [SerializeField] private AudioClip playerDamageClip;
+    [SerializeField] private AudioClip playerDeathClip;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     private bool removeGameObject = false;
@@ -76,7 +79,9 @@ public class PlayerState : MonoBehaviour
         invincibilityTimer = invincibilityDuration;
         oneShotTimer = oneShotDuration;
         speedUpTimer = speedUpDuration;
-       
+
+        
+
     }
     
     void Update()
@@ -153,6 +158,8 @@ public class PlayerState : MonoBehaviour
             TakeDamage(boss.attackDamage);
             Destroy(collision.gameObject);
         }
+
+
     }
 
     private void playerTakesDamageAudio() {
@@ -182,12 +189,14 @@ public class PlayerState : MonoBehaviour
         if (currentHealth == 5)
         {
             repair.gameObject.SetActive(true);
+
         }
 
         if(currentHealth <= 3)
         {
             repair.gameObject.SetActive(false);
             critical.gameObject.SetActive(true);
+            dmgParticles.SetActive(true);
         }
 
         if (currentHealth <= 0)
@@ -195,6 +204,7 @@ public class PlayerState : MonoBehaviour
             audioSource.PlayOneShot(deathClip);
             spriteRenderer.sprite = null;
             GetComponent<EdgeCollider2D>().enabled = false; //stänger av collidern, undviker buggar
+            audioSource.PlayOneShot(playerDeathClip);
             levelCollider.SetActive(false);
             rocketBoost.SetActive(false);
             removeGameObject = true;
