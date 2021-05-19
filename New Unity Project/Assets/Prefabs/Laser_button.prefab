@@ -427,9 +427,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb0c771050fd3344a55521457bbfa4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackOutSquare: {fileID: 0}
-  healthBar: {fileID: 0}
-  fireButton: {fileID: 0}
+  blackOutSquare: {fileID: 8089245652050148440}
+  healthBar: {fileID: 725531601}
+  fireButton: {fileID: 2890044199709956229}
 --- !u!82 &1984287066
 AudioSource:
   m_ObjectHideFlags: 0
@@ -543,7 +543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4825415105432260554
 RectTransform:
   m_ObjectHideFlags: 0
@@ -560,8 +560,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12.6195, y: 1.4928}
-  m_SizeDelta: {x: 1983.1584, y: 1130.2871}
+  m_AnchoredPosition: {x: 0.0036669, y: -0.0094604}
+  m_SizeDelta: {x: 1919.9, y: 1080.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &219796603995210589
 CanvasRenderer:
@@ -710,11 +710,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7482158435255115300, guid: bfd6bd9b03126b84ca902bd60b94be86, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7482158435255115300, guid: bfd6bd9b03126b84ca902bd60b94be86, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7482158435255115300, guid: bfd6bd9b03126b84ca902bd60b94be86, type: 3}
       propertyPath: m_AnchorMin.x
