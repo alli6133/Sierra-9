@@ -405,6 +405,8 @@ MonoBehaviour:
   repair: {fileID: 0}
   critical: {fileID: 0}
   startPosition: {fileID: 0}
+  levelCollider: {fileID: 0}
+  rocketBoost: {fileID: 0}
   maxHealth: 10
   audioSource: {fileID: 237904936}
   deathClip: {fileID: 8300000, guid: cbf1914ffe9833d4f9d6b783ea3460eb, type: 3}
@@ -563,6 +565,14 @@ PrefabInstance:
     - target: {fileID: 6003239987199084985, guid: aeee0df7d067b0349a845092a0443020, type: 3}
       propertyPath: m_Name
       value: PlayerParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734904024832291038, guid: aeee0df7d067b0349a845092a0443020, type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734904024832291038, guid: aeee0df7d067b0349a845092a0443020, type: 3}
+      propertyPath: NoiseModule.scrollSpeed.scalar
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeee0df7d067b0349a845092a0443020, type: 3}
