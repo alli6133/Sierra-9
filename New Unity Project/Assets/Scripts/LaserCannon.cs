@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class LaserCannon : MonoBehaviour
 {
+
     public Rigidbody2D missile;
     public Button button;
     public GameObject laserLauncher;
@@ -43,4 +44,5 @@ public class LaserCannon : MonoBehaviour
             Vibration.Vibrate(100);
         }
     }
+
 }
