@@ -211,6 +211,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1148587209}
     - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 2109152102}
+    - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
       propertyPath: collider2D
       value: 
       objectReference: {fileID: 1609689324}
@@ -830,6 +834,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 547116876, guid: ea51f295b40049641bf8262cc108025e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 547116876, guid: ea51f295b40049641bf8262cc108025e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 725531601, guid: ea51f295b40049641bf8262cc108025e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 725531630, guid: ea51f295b40049641bf8262cc108025e, type: 3}
       propertyPath: ps
       value: 
@@ -1742,8 +1758,8 @@ Transform:
   - {fileID: 560166538}
   - {fileID: 767127752}
   - {fileID: 838624921}
-  - {fileID: 1319279319}
   - {fileID: 1410128039}
+  - {fileID: 1319279319}
   - {fileID: 1413920791}
   - {fileID: 1480635114}
   - {fileID: 1514762550}
@@ -2841,6 +2857,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8685781064531975199, guid: 0e14208c019c6e84e8ef475c4d45ecda, type: 3}
   m_PrefabInstance: {fileID: 2097745387}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2109152102 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 725531601, guid: ea51f295b40049641bf8262cc108025e, type: 3}
+  m_PrefabInstance: {fileID: 386329231}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8444421994561791910
 PrefabInstance:

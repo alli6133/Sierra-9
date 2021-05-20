@@ -17,6 +17,7 @@ public class PlayerState : MonoBehaviour
     public GameObject levelCollider;
     public GameObject rocketBoost;
     public GameObject dmgParticles;
+    [SerializeField] private GameObject healthBar;
     
 
     public int maxHealth = 1;
@@ -68,7 +69,7 @@ public class PlayerState : MonoBehaviour
         touch = GetComponent<TouchMovement>();
         normalMovementSpeed = GetComponent<TouchMovement>().movementSpeed;
 
-        healthUI = GameObject.Find("Slider").GetComponent<HealthUI>();
+        healthUI = healthBar.GetComponent<HealthUI>();
         healthUI.SetMaxHealth(maxHealth);
 
         gameObject.transform.position = startPosition.transform.position;
@@ -168,6 +169,8 @@ public class PlayerState : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        healthUI.SetHealth(currentHealth);
+
         if (!invincibilityBool && !shieldBool)
         {
             audioSource.PlayOneShot(playerDamageClip);
@@ -183,8 +186,6 @@ public class PlayerState : MonoBehaviour
         {
             shieldBool = false;
         }
-
-        healthUI.SetHealth(currentHealth);
 
         if (currentHealth == 5)
         {

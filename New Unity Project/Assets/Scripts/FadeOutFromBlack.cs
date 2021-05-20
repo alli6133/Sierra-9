@@ -18,6 +18,7 @@ public class FadeOutFromBlack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        healthBar.SetActive(false);
         blackOutSquare.SetActive(true);
     }
 
