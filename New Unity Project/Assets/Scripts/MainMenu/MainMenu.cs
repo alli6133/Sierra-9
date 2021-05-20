@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
     public GameObject optionsButton;
     private bool playPressed = false;
     private float timer = 0f;
-    private float timeBeforeDeletion = 3f;
+    private float timeBeforeNewScene = 3f;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip playClip;
     [SerializeField] private AudioClip buttonPressClip;
@@ -37,7 +37,7 @@ public class MainMenu : MonoBehaviour
             StartCoroutine(FadeBlackOutSquare());
 
             timer += Time.deltaTime;
-            if (timer >= timeBeforeDeletion)
+            if (timer >= timeBeforeNewScene)
             {
                 SceneManager.LoadScene("Level1");
             }

@@ -43,7 +43,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e5e97ed52ec2c3046a409d38b43707f7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -127,6 +127,66 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &821431473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 821431474}
+  m_Layer: 0
+  m_Name: MinYPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &821431474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821431473}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 54.113605, y: -7.199476, z: -5.823456}
+  m_LocalScale: {x: 0.3636099, y: 0.3636099, z: 0.3636099}
+  m_Children: []
+  m_Father: {fileID: 6205926900011845852}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1420967789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1420967790}
+  m_Layer: 0
+  m_Name: MaxYPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1420967790
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420967789}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 54.113605, y: 8.072141, z: -5.823456}
+  m_LocalScale: {x: 0.3636099, y: 0.3636099, z: 0.3636099}
+  m_Children: []
+  m_Father: {fileID: 6205926900011845852}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2574207709037923231
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +274,7 @@ Transform:
   m_LocalScale: {x: 0.3636099, y: 0.3636099, z: 0.3636099}
   m_Children: []
   m_Father: {fileID: 6205926900011845852}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &5422794169677588207
 ParticleSystem:
@@ -5056,6 +5116,8 @@ Transform:
   - {fileID: 5365428087599641552}
   - {fileID: 601849754}
   - {fileID: 1084467062140505497}
+  - {fileID: 1420967790}
+  - {fileID: 821431474}
   - {fileID: 8723164115068450069}
   - {fileID: 5848999765897305938}
   m_Father: {fileID: 0}
@@ -5211,8 +5273,10 @@ MonoBehaviour:
   repair: {fileID: 0}
   critical: {fileID: 0}
   startPosition: {fileID: 0}
-  levelCollider: {fileID: 0}
-  rocketBoost: {fileID: 0}
+  levelCollider: {fileID: 2574207709037923231}
+  rocketBoost: {fileID: 1163101654490562251}
+  dmgParticles: {fileID: 0}
+  healthBar: {fileID: 0}
   maxHealth: 10
   audioSource: {fileID: 237904936}
   deathClip: {fileID: 8300000, guid: cbf1914ffe9833d4f9d6b783ea3460eb, type: 3}
@@ -5335,7 +5399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8471297360055530286, guid: 177ec786ffe420f45a64c518a48ee2bd, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8471297360055530286, guid: 177ec786ffe420f45a64c518a48ee2bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5449,6 +5513,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeee0df7d067b0349a845092a0443020, type: 3}
+--- !u!1 &1163101654490562251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6003239987199084985, guid: aeee0df7d067b0349a845092a0443020, type: 3}
+  m_PrefabInstance: {fileID: 4858223175176566642}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1084467062140505497 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5505418757868567275, guid: aeee0df7d067b0349a845092a0443020, type: 3}
