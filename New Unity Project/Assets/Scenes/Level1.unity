@@ -2371,6 +2371,7 @@ MonoBehaviour:
   blackOutSquare: {fileID: 2002585140}
   fireButton: {fileID: 1488001885}
   healthBar: {fileID: 2109152102}
+  audioSource: {fileID: 362510962}
 --- !u!1001 &1892484609
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class SceneSwitcher : MonoBehaviour
     public GameObject blackOutSquare;
     public GameObject fireButton;
     public GameObject healthBar;
+    [SerializeField] private AudioSource audioSource;
     private bool reachedEnd = false;
     private float timer = 0f;
     private float timeBeforeNewScene = 3f;
@@ -29,6 +30,7 @@ public class SceneSwitcher : MonoBehaviour
             fireButton.SetActive(false);
             healthBar.SetActive(false);
             StartCoroutine(FadeBlackOutSquare());
+            StartCoroutine(StartFadeOutAudio(audioSource, 2, 0));
 
             timer += Time.deltaTime;
             if (timer >= timeBeforeNewScene)
@@ -70,5 +72,19 @@ public class SceneSwitcher : MonoBehaviour
                 yield return null;
             }
         }
+    }
+
+    public IEnumerator StartFadeOutAudio(AudioSource audioSource, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float start = audioSource.volume;
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
+            yield return null;
+        }
+        yield break;
     }
 }
