@@ -72,17 +72,22 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    void EnemyTakeDamage(double damage)
+    private void EnemyTakeDamage(double damage)
     {
         currentHealth -= damage;
 
         if (currentHealth <= 0)
         {
-            audioSource.PlayOneShot(deathClip);
-            spriteRenderer.sprite = null;
-            GetComponent<Collider2D>().enabled = false; //stänger av collidern, undviker buggar
-            system.Play();
-            removeGameObject = true;
+            enemyDeath();
         }
+    }
+
+    public void enemyDeath()
+    {
+        audioSource.PlayOneShot(deathClip);
+        spriteRenderer.sprite = null;
+        GetComponent<Collider2D>().enabled = false; //stänger av collidern, undviker buggar
+        system.Play();
+        removeGameObject = true;
     }
 }

@@ -151,7 +151,7 @@ public class PlayerState : MonoBehaviour
         {
             audioSource.PlayOneShot(enemyDeathClip);
             TakeDamage(enemyAttackDamage);
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<EnemyBehaviour>().enemyDeath();
         }
 
         if (collision.gameObject.CompareTag("BossMissile"))
