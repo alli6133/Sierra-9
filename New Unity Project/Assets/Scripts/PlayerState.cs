@@ -211,6 +211,8 @@ public class PlayerState : MonoBehaviour
             rocketBoost.SetActive(false);
             dmgParticles.Stop();
             explosion.Play();
+            healthBar.SetActive(false);
+            
             removeGameObject = true;
         }
     }
