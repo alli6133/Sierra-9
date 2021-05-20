@@ -1832,9 +1832,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1421256072 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4880148955827051600, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+--- !u!198 &1421256074 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5422794169677588207, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
   m_PrefabInstance: {fileID: 1854650563}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1432835117
@@ -2222,6 +2222,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab365ec269701dc4c910f14baea2bce6, type: 3}
+--- !u!198 &1638404388 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1725628425847596468, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+  m_PrefabInstance: {fileID: 1854650563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1666714420 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8685781064531975199, guid: 0e14208c019c6e84e8ef475c4d45ecda, type: 3}
@@ -2419,6 +2424,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 821431474, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1420967790, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1725628425847596468, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
       propertyPath: looping
       value: 0
@@ -2556,6 +2569,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1211604185}
     - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 1638404388}
+    - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 147933810}
@@ -2570,7 +2587,7 @@ PrefabInstance:
     - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
       propertyPath: dmgParticles
       value: 
-      objectReference: {fileID: 1421256072}
+      objectReference: {fileID: 1421256074}
     - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
       propertyPath: levelCollider
       value: 

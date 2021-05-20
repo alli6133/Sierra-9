@@ -16,7 +16,8 @@ public class PlayerState : MonoBehaviour
     public GameObject startPosition;
     public GameObject levelCollider;
     public GameObject rocketBoost;
-    public GameObject dmgParticles;
+    public ParticleSystem dmgParticles;
+    public ParticleSystem explosion;
     [SerializeField] private GameObject healthBar;
     
 
@@ -47,7 +48,6 @@ public class PlayerState : MonoBehaviour
     private float normalMovementSpeed;
 
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip deathClip;
     [SerializeField] private AudioClip enemyDeathClip;
     [SerializeField] private AudioClip powerUpActivatesClip;
     [SerializeField] private AudioClip playerDamageClip;
@@ -190,6 +190,7 @@ public class PlayerState : MonoBehaviour
         if (currentHealth == 5)
         {
             repair.gameObject.SetActive(true);
+            dmgParticles.Play();
 
         }
 
@@ -197,17 +198,19 @@ public class PlayerState : MonoBehaviour
         {
             repair.gameObject.SetActive(false);
             critical.gameObject.SetActive(true);
-            dmgParticles.SetActive(true);
+            
+            
         }
 
         if (currentHealth <= 0)
         {
-            audioSource.PlayOneShot(deathClip);
+            audioSource.PlayOneShot(playerDeathClip);
             spriteRenderer.sprite = null;
             GetComponent<EdgeCollider2D>().enabled = false; //stänger av collidern, undviker buggar
-            audioSource.PlayOneShot(playerDeathClip);
             levelCollider.SetActive(false);
             rocketBoost.SetActive(false);
+            dmgParticles.Stop();
+            explosion.Play();
             removeGameObject = true;
         }
     }
