@@ -12,7 +12,8 @@ public class SceneSwitcher : MonoBehaviour
     public GameObject fireButton;
     public GameObject healthBar;
     [SerializeField] private AudioSource audioSource;
-    private bool reachedEnd = false;
+    private bool reachedEnd1 = false;
+    private bool reachedEnd2 = false;
     private float timer = 0f;
     private float timeBeforeNewScene = 3f;
 
@@ -25,19 +26,34 @@ public class SceneSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (reachedEnd)
+        if (reachedEnd1)
         {
-            fireButton.SetActive(false);
-            healthBar.SetActive(false);
-            StartCoroutine(FadeBlackOutSquare());
-            StartCoroutine(StartFadeOutAudio(audioSource, 2, 0));
+            FadeToNextScene();
 
             timer += Time.deltaTime;
-            if (timer >= timeBeforeNewScene)
+            if (timer >= timeBeforeNewScene )
             {
                 SceneManager.LoadScene("Level2");
             }
         }
+        
+        if (reachedEnd2)
+        {
+            FadeToNextScene();
+
+            timer += Time.deltaTime;
+            if (timer >= timeBeforeNewScene )
+            {
+                SceneManager.LoadScene("BossLvl");
+            }
+        }
+    }
+
+    private void FadeToNextScene() {
+        fireButton.SetActive(false);
+        healthBar.SetActive(false);
+        StartCoroutine(FadeBlackOutSquare());
+        StartCoroutine(StartFadeOutAudio(audioSource, 2, 0));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,7 +62,11 @@ public class SceneSwitcher : MonoBehaviour
         {
             if(SceneManager.GetActiveScene().name == "Level1")
             {
-                reachedEnd = true;
+                reachedEnd1 = true;
+            }
+            else if (SceneManager.GetActiveScene().name == "Level2")
+            {
+                reachedEnd2 = true;
             }
             else
             {
