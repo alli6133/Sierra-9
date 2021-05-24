@@ -103,14 +103,19 @@ public class Laser_Enemy : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            system.Play();
-            readyToFire = false;
-            audioSource.PlayOneShot(deathClip);
-            spriteRenderer.sprite = null;
-            GetComponent<Collider2D>().enabled = false; //stänger av collidern, undviker buggar
-            SpawnPowerupOnDeath();
-            removeGameObject = true;
+            enemyDeath();
         }
+    }
+
+    public void enemyDeath()
+    {
+        system.Play();
+        readyToFire = false;
+        audioSource.PlayOneShot(deathClip);
+        spriteRenderer.sprite = null;
+        GetComponent<Collider2D>().enabled = false; //stänger av collidern, undviker buggar
+        SpawnPowerupOnDeath();
+        removeGameObject = true;
     }
 
     void SpawnPowerupOnDeath()

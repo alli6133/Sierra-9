@@ -16,10 +16,11 @@ public class PlayerState : MonoBehaviour
     public GameObject startPosition;
     public GameObject levelCollider;
     public GameObject rocketBoost;
+    private GameObject laserButton;
     public ParticleSystem dmgParticles;
     public ParticleSystem explosion;
     [SerializeField] private GameObject healthBar;
-    
+
 
     public int maxHealth = 1;
     private int currentHealth;
@@ -65,12 +66,14 @@ public class PlayerState : MonoBehaviour
         }
 
         boss = (BossBehaviour)FindObjectOfType(typeof(BossBehaviour));
+        laserButton = GameObject.Find("Laser_button");
 
         touch = GetComponent<TouchMovement>();
         normalMovementSpeed = GetComponent<TouchMovement>().movementSpeed;
 
         healthUI = healthBar.GetComponent<HealthUI>();
         healthUI.SetMaxHealth(maxHealth);
+        
 
         gameObject.transform.position = startPosition.transform.position;
 
@@ -141,10 +144,16 @@ public class PlayerState : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("EnemyMissile") || collision.gameObject.CompareTag("EnemyLaser"))
+        if (collision.gameObject.CompareTag("EnemyMissile"))
         {
             TakeDamage(enemyAttackDamage);
             Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("EnemyLaser"))
+        {
+            TakeDamage(enemyAttackDamage);
+            collision.gameObject.GetComponent<Laser_Enemy>().enemyDeath();
         }
 
         if (collision.gameObject.CompareTag("Enemy"))
@@ -169,7 +178,6 @@ public class PlayerState : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        healthUI.SetHealth(currentHealth);
 
         if (!invincibilityBool && !shieldBool)
         {
@@ -198,8 +206,7 @@ public class PlayerState : MonoBehaviour
         {
             repair.gameObject.SetActive(false);
             critical.gameObject.SetActive(true);
-            
-            
+            dmgParticles.Play();
         }
 
         if (currentHealth <= 0)
@@ -211,10 +218,10 @@ public class PlayerState : MonoBehaviour
             rocketBoost.SetActive(false);
             dmgParticles.Stop();
             explosion.Play();
-            healthBar.SetActive(false);
-            
+            laserButton.SetActive(false);
             removeGameObject = true;
         }
+        healthUI.SetHealth(currentHealth);
     }
 
     public void Move(Vector2 movementSpeed)

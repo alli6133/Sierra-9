@@ -188,7 +188,7 @@ MonoBehaviour:
   launcherPos: {x: 0, y: 0, z: 0}
   clone: {fileID: 0}
   laserTimer: 0
-  laserCooldown: 0.87
+  laserCooldown: 1.3
   audioSource: {fileID: 135709204}
   deathClip: {fileID: 8300000, guid: 5b6c418aa1e61c34f89a2325cb4352e9, type: 3}
   spriteRenderer: {fileID: 6915392134832690142}

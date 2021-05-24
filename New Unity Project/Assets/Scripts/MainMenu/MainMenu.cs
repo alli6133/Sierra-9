@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private AudioClip playClip;
     [SerializeField] private AudioClip buttonPressClip;
 
-    public void PlayGame ()
+    public void PlayGame()
     {
         audioSource.PlayOneShot(playClip);
         playButton.SetActive(false);

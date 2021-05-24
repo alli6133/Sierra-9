@@ -5283,7 +5283,7 @@ MonoBehaviour:
   enemyDeathClip: {fileID: 8300000, guid: 5b6c418aa1e61c34f89a2325cb4352e9, type: 3}
   powerUpActivatesClip: {fileID: 8300000, guid: aae447300db65d549bdf6ec0985501b1, type: 3}
   playerDamageClip: {fileID: 8300000, guid: a3e3fd2bbc91e2d43b0fd9ff8f3441c0, type: 3}
-  playerDeathClip: {fileID: 8300000, guid: bbc61f99e94c25947b928b2c85726539, type: 3}
+  playerDeathClip: {fileID: 8300000, guid: 373b297210dff374f89dca4e6ef14de3, type: 3}
   spriteRenderer: {fileID: 6205926900011845853}
   timeBeforeDeletion: 5
 --- !u!82 &237904936

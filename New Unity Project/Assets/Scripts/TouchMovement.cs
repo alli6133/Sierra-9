@@ -56,11 +56,11 @@ public class TouchMovement : MonoBehaviour
                 }
                 else if (top && !right)
                 {
-                    calculatedMovement = new Vector3(1f, 3f);
+                    calculatedMovement = new Vector3(1f, 4f);
                 }
                 else if (!top && !right)
                 {
-                    calculatedMovement = new Vector3(1f, -3f);
+                    calculatedMovement = new Vector3(1f, -4f);
                 }
                 
               
@@ -75,12 +75,12 @@ public class TouchMovement : MonoBehaviour
 
                 if (maxYPosReached)
                 {
-                    calculatedMovement = new Vector3(1f, -3f);
+                    calculatedMovement = new Vector3(1f, -4f);
                 }
                 
                 if (minYPosReached)
                 {
-                    calculatedMovement = new Vector3(1f, 3f);
+                    calculatedMovement = new Vector3(1f, 4f);
                 }
             }
         }
@@ -118,9 +118,3 @@ public class TouchMovement : MonoBehaviour
         }
     }
 }
-
-/*
- *      ATT GÖRA
- *finjustera touch-magnitud
- *sätt kontrollerna till övre och nedersta vänstra hörnet
-*/
