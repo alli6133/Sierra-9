@@ -8,6 +8,7 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     private PlayerState ps;
+    private PowerupSpawner powerupScript;
     
     //private Rigidbody2D rigidBody2D; 
     //private SpriteRenderer spriteRenderer;
@@ -15,7 +16,10 @@ public class EnemyBehaviour : MonoBehaviour
     public int maxHealth = 1;
     public int attackDamage = 1;
     public double currentHealth;
+
     private Vector3 myPosition;
+    private Vector3 deathPosition;
+    private Quaternion deathRotation;
 
     //Olivia
     [SerializeField] private AudioSource audioSource;
@@ -36,6 +40,7 @@ public class EnemyBehaviour : MonoBehaviour
     void Start()
     {
         ps = GameObject.Find("Player").GetComponent<PlayerState>();
+        powerupScript = GameObject.Find("PowerupSpawner").GetComponent<PowerupSpawner>();
         currentHealth = maxHealth;
         //rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
         //spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -82,11 +87,22 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
+    private void SpawnPowerUpOnDeath()
+    {
+        if(Random.value <= 0.5)
+        {
+            deathPosition = gameObject.transform.position;
+            deathRotation = gameObject.transform.rotation;
+            powerupScript.SpawnPowerup(deathPosition, deathRotation);
+        }
+    }
+
     public void enemyDeath()
     {
         audioSource.PlayOneShot(deathClip);
         spriteRenderer.sprite = null;
         GetComponent<Collider2D>().enabled = false; //stänger av collidern, undviker buggar
+        SpawnPowerUpOnDeath();
         system.Play();
         removeGameObject = true;
     }
