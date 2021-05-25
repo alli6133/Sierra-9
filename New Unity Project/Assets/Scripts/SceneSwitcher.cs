@@ -11,7 +11,8 @@ public class SceneSwitcher : MonoBehaviour
     public GameObject blackOutSquare;
     public GameObject fireButton;
     public GameObject healthBar;
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSourceAmbience;
+    [SerializeField] private AudioSource audioSourceMusic;
     private bool reachedEnd1 = false;
     private bool reachedEnd2 = false;
     private float timer = 0f;
@@ -53,7 +54,8 @@ public class SceneSwitcher : MonoBehaviour
         fireButton.SetActive(false);
         healthBar.SetActive(false);
         StartCoroutine(FadeBlackOutSquare());
-        StartCoroutine(StartFadeOutAudio(audioSource, 2, 0));
+        StartCoroutine(StartFadeOutAudio(audioSourceAmbience, 2, 0));
+        StartCoroutine(StartFadeOutAudio(audioSourceMusic, 2, 0));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
