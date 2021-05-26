@@ -205,6 +205,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!198 &149249226 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3123614175923416490, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
+  m_PrefabInstance: {fileID: 1585387441}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &809814497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,13 +1099,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6361180955780480651, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6361180955780480651, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
       propertyPath: deathClip
       value: 
       objectReference: {fileID: 8300000, guid: 5b6c418aa1e61c34f89a2325cb4352e9, type: 3}
     - target: {fileID: 6361180955780480651, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 149249226}
+    - target: {fileID: 6361180955780480651, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1585387444}
+    - target: {fileID: 6361180955780480651, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
+      propertyPath: dmgParticles
+      value: 
+      objectReference: {fileID: 1656369347}
     - target: {fileID: 6361180955780480651, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
       propertyPath: spriteRenderer
       value: 
@@ -1265,6 +1282,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!198 &1656369347 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8020286950882045947, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
+  m_PrefabInstance: {fileID: 1585387441}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1668692405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,7 +1428,8 @@ MonoBehaviour:
   blackOutSquare: {fileID: 0}
   fireButton: {fileID: 0}
   healthBar: {fileID: 0}
-  audioSource: {fileID: 0}
+  audioSourceAmbience: {fileID: 0}
+  audioSourceMusic: {fileID: 0}
 --- !u!4 &1739233368
 Transform:
   m_ObjectHideFlags: 0
@@ -1550,6 +1573,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1245723020}
+    - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
       propertyPath: dmgParticles
       value: 

@@ -9,6 +9,8 @@ public class DmgBoxBoss : MonoBehaviour
     private GameObject missile;
     private bool removeGameObject = false;
     private float timer = 0f;
+    public ParticleSystem dmgParticles;
+    public ParticleSystem explosion;
     [SerializeField] private int HP = 20;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip deathClip;
@@ -29,12 +31,15 @@ public class DmgBoxBoss : MonoBehaviour
             HP--;
             Destroy(missile);
 
-            if (HP == 0) {
-                audioSource.PlayOneShot(deathClip);
-                spriteRenderer.sprite = null;
-                GetComponent<CircleCollider2D>().enabled = false; //stänger av collidern, undviker buggar
-                removeGameObject = true;
+            if(HP <= 15)
+            {
+                dmgParticles.Play();
             }
+
+            if (HP == 0) {
+                destroyBoss();
+            }
+
         }
     }
 
@@ -46,8 +51,8 @@ public class DmgBoxBoss : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= timeBeforeDeletion)
             {
-                destroyBoss();
-                SceneManager.LoadScene("MainMenu");
+                Destroy(enemyToKill);
+                SceneManager.LoadScene("VictoryScene");
             }
         }
 
@@ -56,7 +61,13 @@ public class DmgBoxBoss : MonoBehaviour
 
     private void destroyBoss()
     {
-        Destroy(enemyToKill);
+        dmgParticles.Stop();
+        explosion.Play();
+        audioSource.PlayOneShot(deathClip);
+        spriteRenderer.sprite = null;
+        GetComponent<CircleCollider2D>().enabled = false; //stänger av collidern, undviker buggar
+        removeGameObject = true;
+        //Destroy(enemyToKill);
     }
 
 }
