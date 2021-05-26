@@ -16,6 +16,7 @@ public class EnemyBehaviour : MonoBehaviour
     public int maxHealth = 1;
     public int attackDamage = 1;
     public double currentHealth;
+    public float chanceForPowerupSpawn = 0.2f;
 
     private Vector3 myPosition;
     private Vector3 deathPosition;
@@ -89,7 +90,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void SpawnPowerUpOnDeath()
     {
-        if(Random.value <= 0.5)
+        if(Random.value <= chanceForPowerupSpawn)
         {
             deathPosition = gameObject.transform.position;
             deathRotation = gameObject.transform.rotation;
