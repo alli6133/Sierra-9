@@ -1143,7 +1143,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6361180955780480651, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
       propertyPath: HP
-      value: 20
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6361180955780480651, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
       propertyPath: playerUI
@@ -1152,7 +1152,7 @@ PrefabInstance:
     - target: {fileID: 6361180955780480651, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
       propertyPath: deathClip
       value: 
-      objectReference: {fileID: 8300000, guid: 5b6c418aa1e61c34f89a2325cb4352e9, type: 3}
+      objectReference: {fileID: 8300000, guid: 771d97b5649c8164d93ec5f96a3bb856, type: 3}
     - target: {fileID: 6361180955780480651, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
       propertyPath: explosion
       value: 
@@ -1236,6 +1236,10 @@ PrefabInstance:
     - target: {fileID: 6361180955828815227, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890365019812697932, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
@@ -1544,6 +1548,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5848999765897305938, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.07
+      objectReference: {fileID: 0}
     - target: {fileID: 6205926900011845824, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
       propertyPath: m_GravityScale
       value: 0

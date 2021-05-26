@@ -13,7 +13,7 @@ public class FadeOutFromBlack : MonoBehaviour
     private bool isUI = false;
     private float timer = 0f;
     private float timeBeforeFade = 1.5f;
-    private float timeBeforeUIAppears = 6f;
+    private float timeBeforeUIAppears = 2.2f;
 
     // Start is called before the first frame update
     void Start()
