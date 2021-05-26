@@ -16,7 +16,10 @@ public class MusicController : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "GameOver")
         {
             audioSource.loop = true;
-            FadeInAudio();
+            if (SceneManager.GetActiveScene().name != "MainMenu")
+            {
+                FadeInAudio();
+            }
         }
 
         audioSource.Play();

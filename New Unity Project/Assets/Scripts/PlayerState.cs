@@ -19,6 +19,7 @@ public class PlayerState : MonoBehaviour
     private GameObject laserButton;
     public ParticleSystem dmgParticles;
     public ParticleSystem explosion;
+    public AudioSource musicSource;
     [SerializeField] private GameObject healthBar;
 
 
@@ -211,6 +212,7 @@ public class PlayerState : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            musicSource.Stop();
             audioSource.PlayOneShot(playerDeathClip);
             spriteRenderer.sprite = null;
             GetComponent<EdgeCollider2D>().enabled = false; //stänger av collidern, undviker buggar

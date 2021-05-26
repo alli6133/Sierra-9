@@ -5275,8 +5275,9 @@ MonoBehaviour:
   startPosition: {fileID: 0}
   levelCollider: {fileID: 2574207709037923231}
   rocketBoost: {fileID: 1163101654490562251}
-  dmgParticles: {fileID: 0}
-  explosion: {fileID: 0}
+  dmgParticles: {fileID: 5422794169677588207}
+  explosion: {fileID: 1725628425847596468}
+  musicSource: {fileID: 0}
   healthBar: {fileID: 0}
   maxHealth: 10
   audioSource: {fileID: 237904936}
@@ -5898,6 +5899,11 @@ PrefabInstance:
 --- !u!4 &5848999765897305938 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8471297360055530286, guid: 177ec786ffe420f45a64c518a48ee2bd, type: 3}
+  m_PrefabInstance: {fileID: 2646931706077424764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1725628425847596468 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3695594601722202568, guid: 177ec786ffe420f45a64c518a48ee2bd, type: 3}
   m_PrefabInstance: {fileID: 2646931706077424764}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4858223175176566642

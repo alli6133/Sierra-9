@@ -195,33 +195,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1148587209}
     - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
-      propertyPath: explosion
-      value: 
-      objectReference: {fileID: 86446043}
-    - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2109152102}
     - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
-      propertyPath: dmgParticles
+      propertyPath: musicSource
       value: 
-      objectReference: {fileID: 86446044}
+      objectReference: {fileID: 252498792}
     - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
       propertyPath: startPosition
       value: 
       objectReference: {fileID: 1987414949}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
---- !u!198 &86446043 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1725628425847596468, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
-  m_PrefabInstance: {fileID: 86446042}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &86446044 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5422794169677588207, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
-  m_PrefabInstance: {fileID: 86446042}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &86446045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6205926900011845852, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
@@ -1040,14 +1026,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 547116876, guid: ea51f295b40049641bf8262cc108025e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 547116876, guid: ea51f295b40049641bf8262cc108025e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 725531630, guid: ea51f295b40049641bf8262cc108025e, type: 3}
       propertyPath: ps
       value: 
