@@ -15,6 +15,8 @@ public class SceneSwitcher : MonoBehaviour
     [SerializeField] private AudioSource audioSourceMusic;
     private bool reachedEnd1 = false;
     private bool reachedEnd2 = false;
+    private bool reachedEnd3 = false;
+    private bool reachedEnd4 = false;
     private float timer = 0f;
     private float timeBeforeNewScene = 3f;
 
@@ -45,6 +47,28 @@ public class SceneSwitcher : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= timeBeforeNewScene )
             {
+                SceneManager.LoadScene("Level3");
+            }
+        }
+
+        if (reachedEnd3)
+        {
+            FadeToNextScene();
+
+            timer += Time.deltaTime;
+            if (timer >= timeBeforeNewScene)
+            {
+                SceneManager.LoadScene("Level4");
+            }
+        }
+
+        if (reachedEnd4)
+        {
+            FadeToNextScene();
+
+            timer += Time.deltaTime;
+            if (timer >= timeBeforeNewScene)
+            {
                 SceneManager.LoadScene("BossLvl");
             }
         }
@@ -69,6 +93,14 @@ public class SceneSwitcher : MonoBehaviour
             else if (SceneManager.GetActiveScene().name == "Level2")
             {
                 reachedEnd2 = true;
+            }
+            else if (SceneManager.GetActiveScene().name == "Level3")
+            {
+                reachedEnd3 = true;
+            }
+            else if (SceneManager.GetActiveScene().name == "Level4")
+            {
+                reachedEnd4 = true;
             }
             else
             {
