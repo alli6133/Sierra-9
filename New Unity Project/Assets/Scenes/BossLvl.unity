@@ -1638,7 +1638,7 @@ PrefabInstance:
       objectReference: {fileID: 1245723020}
     - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
       propertyPath: maxHealth
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
       propertyPath: dmgParticles

@@ -12,16 +12,14 @@ public class MusicController : MonoBehaviour
     void Start()
     {
         audioSource.clip = musicClip;
-        audioSource.loop = true;
-        audioSource.Play();
 
-
-        /*if (SceneManager.GetActiveScene().name == "Level1")
+        if (SceneManager.GetActiveScene().name != "GameOver")
         {
+            audioSource.loop = true;
+            FadeInAudio();
+        }
 
-        }*/
-
-        FadeInAudio();
+        audioSource.Play();
     }
 
     // Update is called once per frame
