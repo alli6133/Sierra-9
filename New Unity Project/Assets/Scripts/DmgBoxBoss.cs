@@ -19,6 +19,7 @@ public class DmgBoxBoss : MonoBehaviour
     public GameObject whiteSquare;
     public GameObject shootButton;
     public GameObject healthBar;
+    private BossBehaviour bossBehaviour;
     [SerializeField] private int HP = 20;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip deathClip;
@@ -28,6 +29,7 @@ public class DmgBoxBoss : MonoBehaviour
     void Start()
     {
         enemyToKill = gameObject.transform.parent.gameObject;
+        bossBehaviour = (BossBehaviour)FindObjectOfType(typeof(BossBehaviour));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,6 +46,7 @@ public class DmgBoxBoss : MonoBehaviour
             }
 
             if (HP == 0) {
+                bossBehaviour.disableMissiles();
                 destroyBoss();
             }
 

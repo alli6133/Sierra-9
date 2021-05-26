@@ -17,6 +17,7 @@ public class BossBehaviour : MonoBehaviour
     public GameObject bossLauncher;
     public Vector3 launcherPos;
     public Rigidbody2D clone;
+    private bool readyToFire = true;
 
     public int attackDamage = 2;
 
@@ -41,7 +42,7 @@ public class BossBehaviour : MonoBehaviour
         bossLauncher = GameObject.Find("bossLauncher");
         launcherPos = bossLauncher.transform.position;
 
-        if (laserTimer < 0)
+        if (laserTimer < 0 && readyToFire)
         {
             FireMissile();
         }
@@ -58,4 +59,8 @@ public class BossBehaviour : MonoBehaviour
         laserTimer = laserCooldown;
     }
 
+    public void disableMissiles()
+    {
+        readyToFire = false;
+    }
 }
