@@ -38,7 +38,12 @@ public class BossBehaviour : MonoBehaviour
     void Update()
     {
         timeSinceLevelLoad += Time.deltaTime;
-        transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency) * radius + transform.right * timeSinceLevelLoad * speed;
+
+        if (GetComponentInChildren<DmgBoxBoss>().removeGameObject == false)
+        {
+            transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency) * radius + transform.right * timeSinceLevelLoad * speed;
+        }
+
         bossLauncher = GameObject.Find("bossLauncher");
         launcherPos = bossLauncher.transform.position;
 

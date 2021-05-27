@@ -8,11 +8,11 @@ public class DmgBoxBoss : MonoBehaviour
 {
     private GameObject enemyToKill;
     private GameObject missile;
-    private bool removeGameObject = false;
     private float timer = 0f;
     private float timeBeforeEndScene = 10f;
     private float timeBeforeUIDisappears = 6f;
     private bool isUI = true;
+    public bool removeGameObject = false;
     public AudioSource musicSource;
     public ParticleSystem dmgParticles;
     public ParticleSystem explosion;

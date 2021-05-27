@@ -21,6 +21,7 @@ public class EnemyBehaviour : MonoBehaviour
     private Vector3 myPosition;
     private Vector3 deathPosition;
     private Quaternion deathRotation;
+    private bool isAlive = true;
 
     //Olivia
     [SerializeField] private AudioSource audioSource;
@@ -54,8 +55,12 @@ public class EnemyBehaviour : MonoBehaviour
     void Update()
     {
         timeSinceLevelLoad += Time.deltaTime;
-        //Använder sinusformeln för att röra fienden upp och ner
-        transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency/* + offset*/) * radius + transform.right * timeSinceLevelLoad * speed;
+
+        if (isAlive)
+        {
+            //Använder sinusformeln för att röra fienden upp och ner
+            transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency/* + offset*/) * radius + transform.right * timeSinceLevelLoad * speed;
+        }
 
         // Olivia, när fienden dör så kommer timer sättas innan objektet förstörs
         if (removeGameObject == true)
@@ -100,6 +105,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void enemyDeath()
     {
+        isAlive = false;
         audioSource.PlayOneShot(deathClip);
         spriteRenderer.sprite = null;
         GetComponent<Collider2D>().enabled = false; //stänger av collidern, undviker buggar

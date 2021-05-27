@@ -9,7 +9,8 @@ public class SpacerockBehaviour : MonoBehaviour
     public double currentHealth;
     private PlayerState ps;
     private Vector3 rockPosition;
-    ParticleSystem system;
+    private bool isAlive = true;
+    private ParticleSystem system;
     [SerializeField] private float speed = 2f;
     [SerializeField] private float timeBeforeDeletion = 1f;
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -28,8 +29,13 @@ public class SpacerockBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = rockPosition + transform.right * Time.time * speed;
-        //transform.Rotate(0, 0, 50 * Time.deltaTime); //Se till att göra så stenen snurrar runt medans den rör sig på ett visst håll, juicing stage
+        if (isAlive)
+        {
+            transform.position = rockPosition + transform.right * Time.time * speed;
+            //transform.Rotate(0, 0, 50 * Time.deltaTime); //Se till att göra så stenen snurrar runt medans den rör sig på ett visst håll, juicing stage
+        }
+
+
         if (removeGameObject == true)
         {
             timer += Time.deltaTime;
@@ -61,6 +67,7 @@ public class SpacerockBehaviour : MonoBehaviour
 
     private void RockDestruction()
     {
+        isAlive = false;
         spriteRenderer.sprite = null;
         GetComponent<Collider2D>().enabled = false;
         system.Play();

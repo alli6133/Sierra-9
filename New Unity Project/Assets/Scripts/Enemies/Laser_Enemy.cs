@@ -14,6 +14,7 @@ public class Laser_Enemy : MonoBehaviour
     private Vector3 myPosition;
     private Vector3 deathPosition;
     private Quaternion deathRotation;
+    private bool isAlive = true;
 
     public int maxHealth = 2;
     public int attackDamage = 1;
@@ -57,8 +58,13 @@ public class Laser_Enemy : MonoBehaviour
     void Update()
     {
         timeSinceLevelLoad += Time.deltaTime;
-        //Använder sinusformeln för att röra fienden upp och ner
-        transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency /*+ offset*/) * radius + transform.right * timeSinceLevelLoad * speed;
+
+        if (isAlive)
+        {
+            //Använder sinusformeln för att röra fienden upp och ner
+            transform.position = myPosition + transform.up * Mathf.Sin(Time.time * frequency /*+ offset*/) * radius + transform.right * timeSinceLevelLoad * speed;
+        }
+
         enemyLauncher = transform.Find("enemyLauncher").gameObject;
         launcherPos = enemyLauncher.transform.position;
 
@@ -109,6 +115,7 @@ public class Laser_Enemy : MonoBehaviour
 
     public void enemyDeath()
     {
+        isAlive = false;
         system.Play();
         readyToFire = false;
         audioSource.PlayOneShot(deathClip);
