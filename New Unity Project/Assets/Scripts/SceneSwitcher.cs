@@ -11,6 +11,7 @@ public class SceneSwitcher : MonoBehaviour
     public GameObject blackOutSquare;
     public GameObject fireButton;
     public GameObject healthBar;
+    public GameObject outroText;
     [SerializeField] private AudioSource audioSourceAmbience;
     [SerializeField] private AudioSource audioSourceMusic;
     private bool reachedEnd1 = false;
@@ -77,6 +78,7 @@ public class SceneSwitcher : MonoBehaviour
     private void FadeToNextScene() {
         fireButton.SetActive(false);
         healthBar.SetActive(false);
+        outroText.SetActive(true);
         StartCoroutine(FadeBlackOutSquare());
         StartCoroutine(StartFadeOutAudio(audioSourceAmbience, 2, 0));
         StartCoroutine(StartFadeOutAudio(audioSourceMusic, 2, 0));

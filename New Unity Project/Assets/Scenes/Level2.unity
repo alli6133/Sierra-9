@@ -471,6 +471,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8089245652050148440, guid: ea51f295b40049641bf8262cc108025e, type: 3}
   m_PrefabInstance: {fileID: 145690773}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &145690776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1823402922534123672, guid: ea51f295b40049641bf8262cc108025e, type: 3}
+  m_PrefabInstance: {fileID: 145690773}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &147933810 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 725531601, guid: ea51f295b40049641bf8262cc108025e, type: 3}
@@ -2604,6 +2609,7 @@ MonoBehaviour:
   blackOutSquare: {fileID: 145690775}
   fireButton: {fileID: 145690774}
   healthBar: {fileID: 147933810}
+  outroText: {fileID: 145690776}
   audioSourceAmbience: {fileID: 809814498}
   audioSourceMusic: {fileID: 297610453}
 --- !u!4 &1739233368

@@ -886,6 +886,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &386329233 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1823402922534123672, guid: ea51f295b40049641bf8262cc108025e, type: 3}
+  m_PrefabInstance: {fileID: 386329231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &406278179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3087,6 +3092,7 @@ MonoBehaviour:
   blackOutSquare: {fileID: 2002585140}
   fireButton: {fileID: 1488001885}
   healthBar: {fileID: 2109152102}
+  outroText: {fileID: 386329233}
   audioSourceAmbience: {fileID: 0}
   audioSourceMusic: {fileID: 0}
 --- !u!1001 &1913013459
