@@ -149,7 +149,7 @@ MonoBehaviour:
   maxHealth: 1
   attackDamage: 1
   currentHealth: 0
-  chanceForPowerupSpawn: 0.3
+  chanceForPowerupSpawn: 0.13
   audioSource: {fileID: 2099050046512077528}
   deathClip: {fileID: 8300000, guid: 5b6c418aa1e61c34f89a2325cb4352e9, type: 3}
   spriteRenderer: {fileID: 8685781064531975196}
