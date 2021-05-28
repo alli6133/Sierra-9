@@ -16,7 +16,7 @@ public class EnemyBehaviour : MonoBehaviour
     public int maxHealth = 1;
     public int attackDamage = 1;
     public double currentHealth;
-    public float chanceForPowerupSpawn = 0.2f;
+    public float chanceForPowerupSpawn = 1.0f;
 
     private Vector3 myPosition;
     private Vector3 deathPosition;
