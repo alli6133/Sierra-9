@@ -1042,10 +1042,6 @@ PrefabInstance:
       propertyPath: ps
       value: 
       objectReference: {fileID: 1153226390}
-    - target: {fileID: 1823402922534123672, guid: ea51f295b40049641bf8262cc108025e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2994558211793999406, guid: ea51f295b40049641bf8262cc108025e, type: 3}
       propertyPath: m_Name
       value: Laser_button
