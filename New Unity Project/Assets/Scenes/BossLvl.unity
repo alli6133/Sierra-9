@@ -210,6 +210,11 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3123614175923416490, guid: b4030d2dc8261454ea6bf95a02f863c7, type: 3}
   m_PrefabInstance: {fileID: 1585387441}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &415847355 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 601849755, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+  m_PrefabInstance: {fileID: 1854650563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &809814497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,6 +1679,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 415847355}
     - target: {fileID: 7324189012722445321, guid: e2761874a86531e44ac6ec9b2a9db8c6, type: 3}
       propertyPath: dmgParticles
       value: 
