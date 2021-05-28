@@ -30,7 +30,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private bool removeGameObject = false;
     private float timer = 0f;
-    [SerializeField] private float timeBeforeDeletion = 1f; // inte tar bort fiendeobjektet på direkten
+    [SerializeField] private float timeBeforeDeletion = 3f; // inte tar bort fiendeobjektet på direkten
 
     ParticleSystem system;
     [SerializeField] private float frequency = 5f;
