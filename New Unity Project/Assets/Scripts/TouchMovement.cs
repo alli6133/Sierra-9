@@ -87,6 +87,19 @@ public class TouchMovement : MonoBehaviour
 
         calculatedMovement *= Time.deltaTime * movementSpeed;
         Move(calculatedMovement);
+
+        if (Input.GetKey("up"))
+        {
+            calculatedMovement = new Vector3(1f, 4f);
+        }
+
+        else if (Input.GetKey("down"))
+        {
+            calculatedMovement = new Vector3(1f, -4f);
+        }
+        calculatedMovement *= Time.deltaTime * movementSpeed;
+        Move(calculatedMovement);
+
     }
 
     private void Move(Vector3 speed)
