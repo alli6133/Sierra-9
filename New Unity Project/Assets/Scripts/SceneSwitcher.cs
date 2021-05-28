@@ -12,6 +12,8 @@ public class SceneSwitcher : MonoBehaviour
     public GameObject fireButton;
     public GameObject healthBar;
     public GameObject outroText;
+    public GameObject repair;
+    public GameObject critical;
     [SerializeField] private AudioSource audioSourceAmbience;
     [SerializeField] private AudioSource audioSourceMusic;
     private bool reachedEnd1 = false;
@@ -82,6 +84,8 @@ public class SceneSwitcher : MonoBehaviour
         StartCoroutine(FadeBlackOutSquare());
         StartCoroutine(StartFadeOutAudio(audioSourceAmbience, 2, 0));
         StartCoroutine(StartFadeOutAudio(audioSourceMusic, 2, 0));
+        repair.SetActive(false);
+        critical.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

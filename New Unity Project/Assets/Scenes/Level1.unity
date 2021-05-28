@@ -1838,7 +1838,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 834339132, guid: ea51f295b40049641bf8262cc108025e, type: 3}
   m_PrefabInstance: {fileID: 386329231}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2017599725}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -2433,7 +2433,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1148587209, guid: ea51f295b40049641bf8262cc108025e, type: 3}
   m_PrefabInstance: {fileID: 386329231}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1483495945}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -2879,6 +2879,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8685781064531975199, guid: 0e14208c019c6e84e8ef475c4d45ecda, type: 3}
   m_PrefabInstance: {fileID: 1480635113}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1483495945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1148587207, guid: ea51f295b40049641bf8262cc108025e, type: 3}
+  m_PrefabInstance: {fileID: 386329231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1488001885 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2890044199709956229, guid: ea51f295b40049641bf8262cc108025e, type: 3}
@@ -3193,6 +3198,8 @@ MonoBehaviour:
   fireButton: {fileID: 1488001885}
   healthBar: {fileID: 2109152102}
   outroText: {fileID: 386329233}
+  repair: {fileID: 2017599725}
+  critical: {fileID: 1483495945}
   audioSourceAmbience: {fileID: 362510962}
   audioSourceMusic: {fileID: 252498792}
 --- !u!1001 &1873119068
@@ -3459,6 +3466,11 @@ Transform:
 --- !u!1 &2002585140 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8089245652050148440, guid: ea51f295b40049641bf8262cc108025e, type: 3}
+  m_PrefabInstance: {fileID: 386329231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2017599725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 834339130, guid: ea51f295b40049641bf8262cc108025e, type: 3}
   m_PrefabInstance: {fileID: 386329231}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2055922519
