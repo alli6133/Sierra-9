@@ -263,8 +263,11 @@ public class PlayerState : MonoBehaviour
     public void SpeedUp()
     {
         powerUpAudio();
-        touch.movementSpeed *= 2;
-        speedUpBool = true;
+        if (!speedUpBool)
+        {
+            touch.movementSpeed *= 2;
+            speedUpBool = true;
+        }
     }
 
     private void powerUpAudio() {
