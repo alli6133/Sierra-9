@@ -102,6 +102,7 @@ MonoBehaviour:
   maxHealth: 2
   attackDamage: 3
   currentHealth: 0
+  chanceForPowerupSpawn: 0.3
   audioSource: {fileID: 0}
   deathClip: {fileID: 0}
   spriteRenderer: {fileID: 64125088412024523}
@@ -124,7 +125,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
