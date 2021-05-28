@@ -884,7 +884,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1148587209, guid: ea51f295b40049641bf8262cc108025e, type: 3}
   m_PrefabInstance: {fileID: 1245723018}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1245723025}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -895,7 +895,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 834339132, guid: ea51f295b40049641bf8262cc108025e, type: 3}
   m_PrefabInstance: {fileID: 1245723018}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1245723026}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -909,6 +909,21 @@ GameObject:
 --- !u!1 &1245723024 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8089245652050148440, guid: ea51f295b40049641bf8262cc108025e, type: 3}
+  m_PrefabInstance: {fileID: 1245723018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1245723025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1148587207, guid: ea51f295b40049641bf8262cc108025e, type: 3}
+  m_PrefabInstance: {fileID: 1245723018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1245723026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 834339130, guid: ea51f295b40049641bf8262cc108025e, type: 3}
+  m_PrefabInstance: {fileID: 1245723018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1245723027 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1823402922534123672, guid: ea51f295b40049641bf8262cc108025e, type: 3}
   m_PrefabInstance: {fileID: 1245723018}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1261618208
@@ -1503,6 +1518,9 @@ MonoBehaviour:
   blackOutSquare: {fileID: 1245723024}
   fireButton: {fileID: 1245723023}
   healthBar: {fileID: 1245723020}
+  outroText: {fileID: 1245723027}
+  repair: {fileID: 1245723026}
+  critical: {fileID: 1245723025}
   audioSourceAmbience: {fileID: 809814498}
   audioSourceMusic: {fileID: 2046081831}
 --- !u!4 &1739233368

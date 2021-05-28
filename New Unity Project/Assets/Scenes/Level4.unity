@@ -895,6 +895,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1823402922534123672, guid: ea51f295b40049641bf8262cc108025e, type: 3}
   m_PrefabInstance: {fileID: 386329231}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &386329234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1148587207, guid: ea51f295b40049641bf8262cc108025e, type: 3}
+  m_PrefabInstance: {fileID: 386329231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &386329235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 834339130, guid: ea51f295b40049641bf8262cc108025e, type: 3}
+  m_PrefabInstance: {fileID: 386329231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &406278179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1762,7 +1772,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 834339132, guid: ea51f295b40049641bf8262cc108025e, type: 3}
   m_PrefabInstance: {fileID: 386329231}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 386329235}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -2293,7 +2303,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1148587209, guid: ea51f295b40049641bf8262cc108025e, type: 3}
   m_PrefabInstance: {fileID: 386329231}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 386329234}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -3165,6 +3175,8 @@ MonoBehaviour:
   fireButton: {fileID: 1488001885}
   healthBar: {fileID: 2109152102}
   outroText: {fileID: 386329233}
+  repair: {fileID: 386329235}
+  critical: {fileID: 386329234}
   audioSourceAmbience: {fileID: 362510962}
   audioSourceMusic: {fileID: 1940927419}
 --- !u!1001 &1913013459
