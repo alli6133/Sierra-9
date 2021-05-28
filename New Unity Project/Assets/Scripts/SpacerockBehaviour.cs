@@ -12,7 +12,7 @@ public class SpacerockBehaviour : MonoBehaviour
     private bool isAlive = true;
     private ParticleSystem system;
     [SerializeField] private float speed = 2f;
-    [SerializeField] private float timeBeforeDeletion = 1f;
+    [SerializeField] private float timeBeforeDeletion = 0.5f;
     [SerializeField] private SpriteRenderer spriteRenderer;
     private bool removeGameObject = false;
     private float timer = 0f;
@@ -53,9 +53,14 @@ public class SpacerockBehaviour : MonoBehaviour
             Destroy(collision.gameObject);
             RockTakeDamage(ps.currentAttackDamage);
         }
+
+        if(collision.CompareTag("Player") == true)
+        {
+            RockTakeDamage(2);
+        }
     }
 
-    private void RockTakeDamage(double damage)
+    public void RockTakeDamage(double damage)
     {
         currentHealth -= damage;
 
@@ -65,7 +70,7 @@ public class SpacerockBehaviour : MonoBehaviour
         }
     }
 
-    private void RockDestruction()
+    public void RockDestruction()
     {
         isAlive = false;
         spriteRenderer.sprite = null;

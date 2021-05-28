@@ -9,6 +9,7 @@ TagManager:
   - EnemyMissile
   - BossMissile
   - EnemyLaser
+  - Spacerock
   layers:
   - Default
   - TransparentFX

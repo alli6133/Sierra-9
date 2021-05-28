@@ -183,7 +183,7 @@ MonoBehaviour:
   frequency: 5
   radius: 5
   speed: -3
-  readyToFire: 1
+  readyToFire: 0
   enemyMissile: {fileID: 8844575769401281428, guid: af0d5029a318e094aa675160e33f413e, type: 3}
   launcherPos: {x: 0, y: 0, z: 0}
   clone: {fileID: 0}

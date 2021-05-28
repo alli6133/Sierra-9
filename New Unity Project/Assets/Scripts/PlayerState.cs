@@ -12,6 +12,7 @@ public class PlayerState : MonoBehaviour
     [SerializeField] private Text critical;
     private BossBehaviour boss;
     private EnemyBehaviour enemy;
+    private SpacerockBehaviour spaceRock;
     private HealthUI healthUI;
     public GameObject startPosition;
     public GameObject levelCollider;
@@ -31,6 +32,7 @@ public class PlayerState : MonoBehaviour
     private float invincibilityTimer;
     private float oneShotTimer;
     private float speedUpTimer;
+    
 
     private double normalAttackDamage = 1f;
     private int enemyAttackDamage;
@@ -65,6 +67,7 @@ public class PlayerState : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Level1") {
             //Skapa en metod och lägg in den här. Metoden ska flytta spelaren in i kamerans ram, det ska förestå som en typ av intro-"animation" för första leveln
         }
+        spaceRock = (SpacerockBehaviour)FindObjectOfType(typeof(SpacerockBehaviour));
 
         boss = (BossBehaviour)FindObjectOfType(typeof(BossBehaviour));
         laserButton = GameObject.Find("Laser_button");
@@ -149,6 +152,12 @@ public class PlayerState : MonoBehaviour
         {
             TakeDamage(enemyAttackDamage);
             Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Spacerock"))
+        {
+            TakeDamage(enemyAttackDamage);
+            spaceRock.RockTakeDamage(currentAttackDamage);
         }
 
         if (collision.gameObject.CompareTag("EnemyLaser"))
